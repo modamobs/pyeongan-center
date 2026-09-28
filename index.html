@@ -144,7 +144,13 @@
   @media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:36px}}
   .tel{font-size:clamp(34px,4.5vw,56px);font-weight:800;letter-spacing:-.03em;margin:20px 0 8px;display:inline-block}
   .map{aspect-ratio:16/10;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;color:var(--mute);font-size:14px;overflow:hidden}
-  .map iframe{width:100%;height:100%;border:0}
+  .map{position:relative;display:block}
+  .map img{position:absolute;inset:0;width:100%;height:100%;object-fit:none;object-position:center}
+  .map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none}
+  .map .pin b{background:var(--accent);color:#fff;font-size:13px;font-weight:700;line-height:1.4;padding:6px 12px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2);margin-bottom:2px}
+  .map .pin svg{display:block;width:26px;height:34px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+  .map .more{position:absolute;right:10px;bottom:10px;background:#fff;color:var(--ink);font-size:13px;font-weight:600;line-height:1.4;padding:7px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+  .map:hover .more{background:var(--accent);color:#fff}
   .addr{margin-top:14px;font-size:15px;color:var(--ink2)}
   .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
   .chip{display:inline-flex;align-items:center;gap:6px;height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500}
@@ -316,7 +322,12 @@
       </div>
     </div>
     <div>
-      <div class="map" id="mapbox"><iframe src="https://maps.google.com/maps?q=%EC%A0%84%EB%82%A8%20%ED%99%94%EC%88%9C%EA%B5%B0%20%ED%99%94%EC%88%9C%EC%9D%8D%20%EC%B6%A9%EC%9D%98%EB%A1%9C%2070&hl=ko&z=16&output=embed" loading="lazy" title="센터 위치 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <a class="map" id="mapbox" href="https://place.map.kakao.com/1801013849" target="_blank" rel="noopener" aria-label="카카오맵에서 평안노인주간보호센터 위치 크게 보기">
+        <!-- 카카오맵 정적 지도. MX·MY 는 센터 좌표(카카오 WCONGNAMUL). 핀은 지도 한가운데에 CSS 로 올림 -->
+        <img src="https://staticmap.kakao.com/map/mapservice?FORMAT=PNG&amp;SCALE=2.5&amp;MX=496662&amp;MY=433136&amp;S=0&amp;IW=800&amp;IH=500&amp;LANG=0&amp;COORDSTM=WCONGNAMUL&amp;logo=kakao_logo" alt="평안노인주간보호센터 위치 지도 (화순읍 충의로 70)" loading="lazy">
+        <span class="pin"><b>평안노인주간보호센터</b><svg viewBox="0 0 26 34" aria-hidden="true"><path d="M13 0C5.8 0 0 5.7 0 12.8 0 22.4 13 34 13 34s13-11.6 13-21.2C26 5.7 20.2 0 13 0z" fill="#1f6b52"/><circle cx="13" cy="12.5" r="5" fill="#fff"/></svg></span>
+        <span class="more">카카오맵에서 크게 보기 ↗</span>
+      </a>
       <div class="addr"><span data-i="address">[도로명 주소]</span><br><span data-i="landmark">[주변 안내 — 예) ○○초등학교 맞은편 2층]</span></div>
     </div>
   </div>
