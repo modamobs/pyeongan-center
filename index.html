@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>평안노인주간보호센터 — 어르신은 즐겁게, 가족은 안심하게</title>
-<meta name="description" content="화순 노인장기요양보험 지정 주간보호센터. 인지·신체활동 프로그램, 정성껏 준비한 식사, 송영 차량. 견학·상담 환영.">
-<meta property="og:title" content="평안노인주간보호센터">
-<meta property="og:description" content="화순 노인장기요양보험 지정 주간보호센터. 견학·상담 환영.">
+<title>평안노인주간보호센터 — 화순 주간보호 · 방문요양</title>
+<meta name="description" content="화순 노인장기요양보험 지정기관. 낮에는 센터에서 함께하는 주간보호, 댁으로 찾아가는 방문요양. 송영 차량, 직접 조리한 식사, 2024 공단 평가 최우수. 견학·상담 환영.">
+<meta property="og:title" content="평안노인주간보호센터 — 화순 주간보호 · 방문요양">
+<meta property="og:description" content="어르신은 즐겁게, 가족은 안심하게. 견학·상담 환영.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/og.jpg">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -14,336 +14,681 @@
   /* ============================================================
      평안노인주간보호센터 — 단일 파일 홈페이지
      · 맨 아래 <script>의 INFO 만 채우면 본문 전체에 반영됩니다.
-     · 사진: img/ 폴더. hero1.jpg hero2.jpg hero3.jpg (첫 화면 슬라이드),
-       p1.jpg p2.jpg p3.jpg p4.jpg (프로그램), og.jpg (공유 썸네일)
+     · 장기요양 수가가 바뀌면(매년 1월) <script>의 FEE 를 고칩니다.
+     · 사진: img/ 폴더. hero1~3.jpg (첫 화면), p1~p6.jpg (프로그램), og.jpg (공유 썸네일)
+       파일이 없으면 그 자리는 아이콘으로 대신 보입니다.
      ============================================================ */
   :root{
-    --ink:#1c1c1c; --ink2:#4a4a4a; --mute:#6b6b6b; --line:#e6e6e6; --bg:#fff; --soft:#f6f6f4;
-    --accent:#1f6b52; --accent-d:#174f3d; --ph-bg:#fff4d6; --ph:#b4681f;
+    --bg:#fbf7f0; --paper:#fff; --soft:#f4ede2; --soft2:#efe6d8;
+    --ink:#2e2219; --ink2:#55463b; --mute:#7a6a5d; --line:#e7ddcf;
+    --brown:#9a4a1f; --brown-d:#7a3815; --brown-soft:#f6e9dd;
+    --green:#3d6b35; --green-d:#2f5429; --green-soft:#e9f0e2;
+    --ph-bg:#fff4d6; --ph:#b4681f;
+    --r:18px; --shadow:0 1px 2px rgba(60,40,20,.05),0 8px 24px rgba(60,40,20,.07);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-size:17px;line-height:1.75;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   h1,h2,h3,p{margin:0}
+  button,input,select{font:inherit;color:inherit;letter-spacing:inherit}
   .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-  section{padding:104px 0}
+  @media(max-width:520px){.wrap{padding:0 18px}}
+  section{padding:96px 0}
   @media(max-width:768px){section{padding:64px 0}}
   .ph{background:var(--ph-bg);color:var(--ph);border-bottom:1px dashed var(--ph);padding:0 3px}
+  .ico{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
-  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--accent);margin-bottom:16px}
-  h2{font-size:clamp(28px,3.6vw,42px);font-weight:700;line-height:1.28;letter-spacing:-.02em}
-  .lead{font-size:18px;color:var(--ink2);margin-top:20px;max-width:640px;font-weight:400}
-  .split{display:grid;grid-template-columns:400px 1fr;gap:72px;align-items:start}
-  @media(max-width:900px){.split{grid-template-columns:1fr;gap:36px}}
+  .eyebrow{font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--green);margin-bottom:12px}
+  h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;line-height:1.3;letter-spacing:-.03em}
+  h2 em{font-style:normal;color:var(--brown)}
+  .lead{font-size:18px;color:var(--ink2);margin-top:16px;max-width:680px}
+  .head{margin-bottom:44px}
+  .head.center{text-align:center}.head.center .lead{margin-left:auto;margin-right:auto}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+  .note{font-size:14px;color:var(--mute);margin-top:14px;line-height:1.65}
+
+  /* buttons */
+  .btns{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 26px;border-radius:14px;font-size:17px;font-weight:700;border:1.5px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;text-align:center}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-a{background:var(--brown);color:#fff}.btn-a:hover{background:var(--brown-d)}
+  .btn-g{background:var(--green);color:#fff}.btn-g:hover{background:var(--green-d)}
+  .btn-l{background:var(--paper);border-color:var(--brown);color:var(--brown)}
+  .btn-k{background:#fee500;color:#191600}
+  .btn-sm{min-height:46px;padding:0 18px;font-size:16px;border-radius:12px}
 
   /* header */
-  header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,box-shadow .3s,color .3s;color:#fff}
-  header.solid{background:rgba(255,255,255,.96);color:var(--ink);box-shadow:0 1px 0 var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-  .brand{font-size:20px;font-weight:800;letter-spacing:-.02em}
-  .menu{display:flex;gap:34px;font-size:15px;font-weight:500}
-  .menu a{opacity:.85}.menu a:hover{opacity:1}
-  .call{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;font-size:15px;font-weight:600;border:1px solid rgba(255,255,255,.6)}
-  header.solid .call{background:var(--accent);color:#fff;border-color:var(--accent)}
-  @media(max-width:900px){.menu{display:none}}
-  @media(max-width:520px){.brand{font-size:17px}.call{height:38px;padding:0 14px;font-size:14px}}
+  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+  .brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;letter-spacing:-.03em;white-space:nowrap}
+  .brand svg{width:30px;height:30px;color:var(--green)}
+  .menu{display:flex;gap:26px;font-size:16px;font-weight:600;color:var(--ink2)}
+  .menu a:hover{color:var(--brown)}
+  .call{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 18px;border-radius:12px;background:var(--brown);color:#fff;font-size:16px;font-weight:700;white-space:nowrap}
+  .call:hover{background:var(--brown-d)}
+  @media(max-width:1060px){.menu{display:none}}
+  @media(max-width:520px){.brand{font-size:17px}.brand svg{width:24px;height:24px}.call{height:40px;padding:0 12px;font-size:14px}.call .ico{width:16px;height:16px}}
 
   /* hero */
-  .hero{position:relative;height:100svh;min-height:600px;max-height:900px;overflow:hidden;background:#3a3a36;color:#fff;display:flex;align-items:flex-end;padding:76px 0 0}
-  .slides{position:absolute;inset:0}
-  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background:linear-gradient(160deg,#8b7a63,#4f463a);background-size:cover;background-position:center}
+  .hero{position:relative;padding:0;overflow:hidden;background:var(--bg)}
+  .hero-in{min-height:600px;display:flex;align-items:center}
+  .slides{position:absolute;top:0;bottom:60px;right:0;width:62%}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background:linear-gradient(160deg,#d9c9b0,#b59c7c);background-size:cover;background-position:center}
   .slide.on{opacity:1}
-  .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.05) 35%,rgba(0,0,0,.55) 100%)}
-  .slide .tag{position:absolute;right:24px;top:96px;font-size:12px;letter-spacing:.04em;opacity:.7}
-  .hero .wrap{position:relative;z-index:2;padding-bottom:96px;width:100%}
-  .hero h1{font-size:clamp(38px,6vw,76px);font-weight:800;line-height:1.15;letter-spacing:-.03em;text-shadow:0 2px 24px rgba(0,0,0,.25)}
-  .hero p{font-size:clamp(16px,1.5vw,20px);margin:22px 0 32px;max-width:560px;opacity:.92}
-  .hero .cred{margin:28px 0 0;font-size:14px;line-height:1.6;max-width:none;opacity:.85}
-  .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 26px;border-radius:999px;font-size:16px;font-weight:600;transition:transform .15s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn-w{background:#fff;color:var(--ink)}
-  .btn-o{border:1px solid rgba(255,255,255,.7);color:#fff}
-  .btn-a{background:var(--accent);color:#fff}
-  .btn-l{border:1px solid var(--ink);color:var(--ink)}
-  .dots{position:absolute;right:24px;bottom:32px;z-index:2;display:flex;gap:8px}
-  .dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer}
+  .slides::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(251,247,240,.85) 18%,rgba(251,247,240,0) 48%)}
+  .slide .tag{position:absolute;right:20px;top:20px;font-size:12px;color:#fff;opacity:.85}
+  .hero-text{position:relative;z-index:2;max-width:540px;padding:72px 0 150px}
+  .hero h1{font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.2;letter-spacing:-.04em}
+  .hero h1 .g{color:var(--green)}.hero h1 .b{color:var(--brown)}
+  .hero p.sub{font-size:clamp(17px,1.5vw,19px);color:var(--ink2);margin:20px 0 30px}
+  .dots{position:absolute;right:24px;bottom:132px;z-index:2;display:flex;gap:8px}
+  .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
   .dots i.on{background:#fff}
-
-  /* numbers */
-  .nums{border-bottom:1px solid var(--line)}
-  .nums .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:44px;padding-bottom:44px}
-  .nums b{display:block;font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
-  .nums span{font-size:14px;color:var(--mute)}
-  .nums b span{font-size:inherit;color:inherit}
-  @media(max-width:768px){.nums .wrap{grid-template-columns:repeat(2,1fr)}.nums b{font-size:34px}}
+  .badges{position:relative;z-index:3;margin-top:-100px;display:grid;grid-template-columns:repeat(4,1fr);padding:22px 8px}
+  .badge{display:flex;align-items:center;gap:14px;padding:6px 22px;border-left:1px solid var(--line)}
+  .badge:first-child{border-left:0}
+  .badge .ico{width:34px;height:34px;color:var(--green);stroke-width:1.7}
+  .badge:nth-child(even) .ico{color:var(--brown)}
+  .badge div > span{display:block;font-size:14px;color:var(--mute);line-height:1.4}
+  .badge b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.35}
+  @media(max-width:900px){
+    .hero-in{display:block;min-height:0}
+    .slides{position:relative;width:auto;margin:0 -24px;aspect-ratio:16/10}
+    .slides::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(251,247,240,0) 30%)}
+    .hero-text{padding:8px 0 40px;max-width:none}
+    .dots{top:16px;bottom:auto;right:16px}
+    .badges{margin-top:0;grid-template-columns:1fr 1fr;padding:8px}
+    .badge{padding:14px;border-left:0}
+    .badge:nth-child(n+3){border-top:1px solid var(--line)}
+    .badge:nth-child(even){border-left:1px solid var(--line)}
+    .badge .ico{width:28px;height:28px}.badge b{font-size:18px}
+  }
+  @media(max-width:520px){.hero .btns .btn{flex:1 1 100%}.slides{margin:0 -18px}}
 
   /* who */
-  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-  @media(max-width:768px){.cols3{grid-template-columns:1fr;gap:28px}}
-  .item{border-top:2px solid var(--ink);padding-top:20px}
-  .item .n{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:12px}
-  .item h3{font-size:20px;font-weight:700;margin-bottom:8px}
-  .item p{font-size:16px;color:var(--ink2)}
+  .who{padding-top:88px}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.cols3{grid-template-columns:1fr}}
+  .wcard{padding:30px 28px;display:flex;flex-direction:column;gap:10px}
+  .wcard .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--green-soft);color:var(--green);margin-bottom:6px}
+  .wcard:nth-child(2) .ic{background:var(--brown-soft);color:var(--brown)}
+  .wcard h3{font-size:21px;font-weight:800;line-height:1.4}
+  .wcard p{font-size:16px;color:var(--ink2)}
+
+  /* services */
+  .services{background:var(--soft)}
+  .svc2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:860px){.svc2{grid-template-columns:1fr}}
+  .svc{padding:34px 32px;display:flex;flex-direction:column}
+  .svc .tag2{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;font-size:14px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--green-soft);color:var(--green);margin-bottom:14px}
+  .svc.home .tag2{background:var(--brown-soft);color:var(--brown)}
+  .svc h3{font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.35}
+  .svc > p{font-size:17px;color:var(--ink2);margin-top:8px}
+  .svc ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px}
+  .svc li{display:flex;gap:10px;font-size:16px;color:var(--ink2)}
+  .svc li .ico{width:20px;height:20px;margin-top:4px;color:var(--green)}
+  .svc.home li .ico{color:var(--brown)}
+  .svc li b{color:var(--ink);font-weight:700}
+  .svc .match{margin-top:22px;padding:18px 20px;border-radius:14px;background:var(--brown-soft);font-size:15px;color:var(--ink2)}
+  .svc .match b{display:block;color:var(--brown-d);font-size:16px;margin-bottom:2px}
+  .svc .btns{margin-top:auto;padding-top:24px}
+  .both{margin-top:24px;padding:22px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:16px;color:var(--ink2)}
+  .both b{color:var(--ink)}
+  .both .ico{width:28px;height:28px;color:var(--green)}
+
+  /* finder */
+  .finder-box{max-width:820px;margin:0 auto;padding:36px}
+  @media(max-width:520px){.finder-box{padding:24px 18px}}
+  .q{padding:18px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .q:first-of-type{border-top:0;padding-top:0}
+  .q p{font-size:17px;font-weight:600;line-height:1.5}
+  .q p small{display:block;font-size:14px;font-weight:400;color:var(--mute)}
+  .yn{display:flex;gap:8px;flex:none}
+  .yn button{min-width:76px;height:48px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:16px;font-weight:700;cursor:pointer}
+  .yn button[aria-pressed="true"]{border-color:var(--green);background:var(--green);color:#fff}
+  @media(max-width:600px){.q{flex-direction:column;align-items:stretch}.yn button{flex:1}}
+  .fresult{margin-top:24px;padding:26px;border-radius:16px;background:var(--green-soft);display:none}
+  .fresult.show{display:block}
+  .fresult.b{background:var(--brown-soft)}
+  .fresult .type{font-size:14px;font-weight:800;color:var(--green);letter-spacing:.02em}
+  .fresult.b .type{color:var(--brown)}
+  .fresult h3{font-size:24px;font-weight:800;margin:4px 0 8px;letter-spacing:-.03em}
+  .fresult p{font-size:16px;color:var(--ink2)}
+  .fresult .btns{margin-top:18px}
+  .fresult .wait{color:var(--mute)}
 
   /* about */
-  .about{background:var(--soft)}
-  .photo{position:relative;overflow:hidden;background:linear-gradient(160deg,#cfc7b8,#a89d8a);display:grid;place-items:center;color:#fff;font-size:14px;letter-spacing:.06em;aspect-ratio:4/3}
-  .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .sign{margin-top:24px;font-weight:700}
-  .strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-  @media(max-width:768px){.strengths{grid-template-columns:1fr}}
-  .strength{background:#fff;padding:28px;border:1px solid var(--line)}
-  .strength h3{font-size:18px;font-weight:700;margin-bottom:8px;display:flex;gap:8px;align-items:center}
-  .strength h3 svg{flex:none;color:var(--accent)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
+  .about-grid.solo{grid-template-columns:1fr;max-width:880px}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:32px}}
+  .about-photo{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#d9c9b0,#b59c7c)}
+  .about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about .lead{margin-top:18px}
+  .sign{margin-top:20px;font-weight:700}
+  .strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;border-top:1px solid var(--line)}
+  @media(max-width:700px){.strengths{grid-template-columns:1fr}}
+  .strength{padding:22px 20px 0 0}
+  .strength .ico{width:34px;height:34px;color:var(--green);stroke-width:1.7;margin-bottom:8px}
+  .strength:nth-child(2) .ico{color:var(--brown)}
+  .strength h3{font-size:18px;font-weight:800;margin-bottom:4px;color:var(--brown-d)}
   .strength p{font-size:15px;color:var(--ink2)}
 
   /* day */
-  .tl{list-style:none;padding:0;margin:0}
-  .tl li{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
-  .tl li:last-child{border-bottom:1px solid var(--line)}
-  .tl time{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--accent)}
-  .tl b{display:block;font-size:18px;font-weight:700;margin-bottom:2px}
-  .tl p{font-size:15px;color:var(--ink2)}
-  @media(max-width:520px){.tl li{grid-template-columns:84px 1fr;gap:14px}.tl time{font-size:18px}}
-  .hours{margin-top:28px;font-size:15px;color:var(--ink2);background:var(--soft);padding:16px 20px}
+  .day{background:var(--green-soft)}
+  .day .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .hours{font-size:15px;color:var(--ink2);background:var(--paper);border-radius:14px;padding:14px 18px;line-height:1.7}
+  .tl{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(7,1fr);position:relative}
+  .tl::before{content:"";position:absolute;left:7%;right:7%;top:38px;height:2px;background:repeating-linear-gradient(90deg,var(--green) 0 6px,transparent 6px 12px);opacity:.5}
+  .tl li{position:relative;text-align:center;padding:0 6px}
+  .tl .dot{width:78px;height:78px;margin:0 auto 14px;border-radius:50%;background:var(--paper);border:2px solid var(--green);display:grid;place-items:center;color:var(--green)}
+  .tl .dot .ico{width:32px;height:32px;stroke-width:1.6}
+  .tl li:nth-child(3) .dot,.tl li:nth-child(6) .dot{border-color:var(--brown);color:var(--brown)}
+  .tl time{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .tl b{display:block;font-size:16px;font-weight:700;color:var(--green-d)}
+  .tl p{font-size:14px;color:var(--ink2);margin-top:6px;line-height:1.55}
+  @media(max-width:900px){
+    .tl{grid-template-columns:1fr;gap:0}
+    .tl::before{left:38px;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--green) 0 6px,transparent 6px 12px)}
+    .tl li{display:grid;grid-template-columns:78px 1fr;gap:16px;text-align:left;padding:10px 0;align-items:center}
+    .tl .dot{margin:0;width:78px;height:78px}
+    .tl time{display:inline;font-size:19px;margin-right:8px}.tl b{display:inline;font-size:17px}
+    .tl p{margin-top:2px;font-size:15px}
+  }
 
   /* program */
-  .pgrid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px;margin-top:48px}
-  .pgrid .photo:first-child{grid-row:span 2;aspect-ratio:auto}
-  .pgrid .photo{aspect-ratio:auto}
-  @media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.pgrid .photo{aspect-ratio:4/3}.pgrid .photo:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}}
-  .plist{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px;margin-top:40px}
-  @media(max-width:768px){.plist{grid-template-columns:1fr}}
-  .pitem{padding:26px 0;border-top:1px solid var(--line)}
-  .pitem h3{font-size:19px;font-weight:700;margin-bottom:6px}
-  .pitem p{font-size:15px;color:var(--ink2)}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+  .pcard{overflow:hidden;display:flex;flex-direction:column}
+  .pimg{position:relative;aspect-ratio:16/10;background:var(--soft);display:grid;place-items:center;color:var(--green)}
+  .pimg .ico{width:44px;height:44px;stroke-width:1.4}
+  .pcard:nth-child(even) .pimg{color:var(--brown)}
+  .pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pimg.empty{background:radial-gradient(circle at 50% 50%,var(--paper) 0 34px,transparent 35px),var(--soft)}
+  .pbody{padding:22px 24px 26px}
+  .pbody h3{font-size:20px;font-weight:800;color:var(--brown-d);margin-bottom:6px}
+  .pbody p{font-size:15px;color:var(--ink2)}
 
   /* guide */
-  .guide{background:var(--ink);color:#fff}
-  .guide .eyebrow{color:#8fd1b6}
-  .guide .lead{color:#c9c9c9}
-  .rows{display:flex;flex-direction:column}
-  .row{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:22px 0;border-top:1px solid rgba(255,255,255,.18);font-size:16px}
-  .row:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
-  .row b{font-weight:600;color:#bdbdbd}
-  .row div{color:#f0f0f0;line-height:1.7}
-  .guide .ph{background:transparent;color:#ffd08a;border-color:#ffd08a}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-  @media(max-width:768px){.steps{grid-template-columns:1fr 1fr}}
-  .step{border:1px solid rgba(255,255,255,.18);padding:22px}
-  .step i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;color:#8fd1b6;margin-bottom:10px}
-  .step b{display:block;font-size:17px;margin-bottom:4px}
-  .step p{font-size:14px;color:#bdbdbd}
-  @media(max-width:520px){.row{grid-template-columns:1fr;gap:4px}}
+  .guide{background:var(--soft)}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.g4{grid-template-columns:1fr}}
+  .gcard{padding:26px 24px}
+  .gcard h3{display:flex;align-items:center;gap:8px;font-size:19px;font-weight:800;margin-bottom:12px;color:var(--brown-d)}
+  .gcard h3 .ico{color:var(--brown)}
+  .gcard ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink2);display:flex;flex-direction:column;gap:6px}
+  .gcard ul li::marker{color:var(--brown)}
+  .steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .steps li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink2);line-height:1.55}
+  .steps i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--brown);color:#fff;font-style:normal;font-weight:800;font-size:15px;display:grid;place-items:center}
+  .steps b{display:block;color:var(--ink);font-size:16px}
+  .gnote{margin-top:22px;font-size:15px;color:var(--ink2)}
+
+  /* calc */
+  .calc{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+  @media(max-width:900px){.calc{grid-template-columns:1fr}}
+  .cform{padding:30px}
+  @media(max-width:520px){.cform{padding:22px 18px}}
+  .field{margin-bottom:22px}
+  .field:last-child{margin-bottom:0}
+  .field > label,.field > .lbl{display:block;font-size:16px;font-weight:700;margin-bottom:8px}
+  .seg{display:flex;flex-wrap:wrap;gap:8px}
+  .seg button{min-height:48px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:16px;font-weight:600;cursor:pointer}
+  .seg button[aria-pressed="true"]{border-color:var(--brown);background:var(--brown);color:#fff}
+  .seg button:disabled{opacity:.35;cursor:not-allowed}
+  select,input[type=text],input[type=tel],input[type=date],textarea{width:100%;min-height:52px;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:17px}
+  select:focus,input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid rgba(154,74,31,.35);outline-offset:2px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.two{grid-template-columns:1fr}}
+  .sub-block{padding:20px;border-radius:14px;background:var(--bg);margin-bottom:22px}
+  .sub-block h4{margin:0 0 12px;font-size:16px;color:var(--green-d)}
+  .sub-block .field{margin-bottom:14px}
+  .cout{padding:30px;position:sticky;top:96px}
+  .cout .big{font-size:clamp(34px,4vw,44px);font-weight:800;letter-spacing:-.03em;color:var(--brown);line-height:1.2}
+  .cout .big small{font-size:18px;color:var(--ink2);font-weight:600}
+  .cout dl{margin:20px 0 0;display:grid;grid-template-columns:1fr auto;gap:10px 12px;font-size:15px;border-top:1px solid var(--line);padding-top:18px}
+  .cout dt{color:var(--ink2)}.cout dd{margin:0;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .cout dd.warn{color:#b3261e}
+  .cout .msg{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--brown-soft);font-size:14px;color:var(--brown-d);display:none}
+  .cout .msg.show{display:block}
+
+  /* apply */
+  .apply{background:var(--soft)}
+  .tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .tabs button{min-height:52px;padding:0 22px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);font-size:17px;font-weight:700;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .aform{padding:32px;max-width:820px}
+  @media(max-width:520px){.aform{padding:22px 18px}}
+  .aform[hidden]{display:none}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{position:relative}
+  .chips input{position:absolute;opacity:0;pointer-events:none}
+  .chips span{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:16px;font-weight:600;cursor:pointer}
+  .chips input:checked + span{border-color:var(--green);background:var(--green);color:#fff}
+  .chips input:focus-visible + span{outline:3px solid rgba(61,107,53,.35);outline-offset:2px}
+  textarea{min-height:96px;resize:vertical;line-height:1.6}
+  .err{color:#b3261e;font-size:15px;margin-top:12px;display:none}
+  .err.show{display:block}
+  .preview{display:none;margin-top:22px;padding:20px;border-radius:14px;background:var(--bg);border:1px dashed var(--line)}
+  .preview.show{display:block}
+  .preview pre{margin:0 0 16px;white-space:pre-wrap;font:inherit;font-size:15px;color:var(--ink2);line-height:1.65}
+  .privacy{font-size:14px;color:var(--mute);margin-top:16px;line-height:1.6}
+  .toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:12px;font-size:15px;z-index:60;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* contact */
-  .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  @media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:36px}}
-  .tel{font-size:clamp(34px,4.5vw,56px);font-weight:800;letter-spacing:-.03em;margin:20px 0 8px;display:inline-block}
-  .map{aspect-ratio:16/10;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;color:var(--mute);font-size:14px;overflow:hidden}
-  .map{position:relative;display:block}
+  .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  @media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:32px}}
+  .tel-btn{margin-top:26px;font-size:clamp(24px,3vw,30px);min-height:72px;padding:0 30px;border-radius:16px}
+  .tel-btn .ico{width:28px;height:28px}
+  .contact .btns{margin-top:12px}
+  .hrs{margin-top:16px;font-size:15px;color:var(--ink2);display:flex;gap:8px;align-items:flex-start}
+  .hrs .ico{width:20px;height:20px;margin-top:3px;color:var(--green)}
+  .map{position:relative;display:block;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;background:var(--soft);border:1px solid var(--line)}
   .map img{position:absolute;inset:0;width:100%;height:100%;object-fit:none;object-position:center}
   .map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none}
-  .map .pin b{background:var(--accent);color:#fff;font-size:13px;font-weight:700;line-height:1.4;padding:6px 12px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2);margin-bottom:2px}
+  .map .pin b{background:var(--brown);color:#fff;font-size:13px;font-weight:700;line-height:1.4;padding:6px 12px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2);margin-bottom:2px}
   .map .pin svg{display:block;width:26px;height:34px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
-  .map .more{position:absolute;right:10px;bottom:10px;background:#fff;color:var(--ink);font-size:13px;font-weight:600;line-height:1.4;padding:7px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
-  .map:hover .more{background:var(--accent);color:#fff}
-  .addr{margin-top:14px;font-size:15px;color:var(--ink2)}
-  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-  .chip{display:inline-flex;align-items:center;gap:6px;height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500}
-  .chip:hover{border-color:var(--ink)}
+  .map .more{position:absolute;right:10px;bottom:10px;background:#fff;color:var(--ink);font-size:13px;font-weight:700;line-height:1.4;padding:7px 12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+  .map:hover .more{background:var(--brown);color:#fff}
+  .addr{margin-top:14px;font-size:16px;color:var(--ink2);display:flex;gap:8px}
+  .addr .ico{width:20px;height:20px;margin-top:4px;color:var(--brown)}
+  .links{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:15px;font-weight:600;color:var(--ink2)}
+  .links a{text-decoration:underline;text-underline-offset:3px}
 
-  footer{border-top:1px solid var(--line);padding:36px 0 110px;font-size:13px;color:var(--mute);line-height:1.8}
+  footer{background:var(--soft2);padding:36px 0 120px;font-size:14px;color:var(--mute);line-height:1.8}
   footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer b{color:var(--ink)}
 
   /* mobile call bar */
   .callbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
-  .callbar .btn{flex:1;height:50px}
+  .callbar .btn{flex:1;min-height:52px}
   @media(max-width:900px){.callbar{display:flex}}
 
   /* reveal */
   .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
   .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.slide{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<header id="hd">
+<!-- 아이콘 모음 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 32 32"><path d="M16 28V15" /><path d="M16 15c0-6 4-10 11-10 0 7-4 11-11 10z" fill="currentColor" fill-opacity=".18"/><path d="M16 19C16 13 12 9 5 9c0 7 4 11 11 10z" fill="currentColor" fill-opacity=".18"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 4.8"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="14.5" r=".8"/><circle cx="16" cy="14.5" r=".8"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a3 3 0 0 0-3-1z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8c0-1.5 1-2 1-3.5M12 8c0-1.5 1-2 1-3.5M16 8c0-1.5 1-2 1-3.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-won" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m7.5 8 1.8 8L12 9l2.7 7 1.8-8M7 12h10"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 0 0 0-6H8a3 3 0 0 1 0-6h7.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24"><circle cx="14" cy="4.5" r="2"/><path d="m8 21 3-6 3 2v5M6 12l3-4h5l3 4M11 15l1-7"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M5 3v6a5 5 0 0 0 10 0V3"/><path d="M10 14v2a5 5 0 0 0 10 0v-3"/><circle cx="20" cy="11" r="2"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h13v5a6 6 0 0 1-13 0z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>
+  <symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 21c-4 0-8-3-8-7V9a1.5 1.5 0 0 1 3 0v3"/><path d="M7 12V6a1.5 1.5 0 0 1 3 0v5M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V6a1.5 1.5 0 0 1 3 0v6c1-1.5 2.5-2 3.5-1.5-1 3-2.5 6.5-7.5 6.5"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 4C7 4 3 7.1 3 11c0 2.4 1.5 4.5 3.9 5.8L6 20l4-2.2c.6.1 1.3.2 2 .2 5 0 9-3.1 9-7s-4-7-9-7z"/></symbol>
+</svg>
+
+<header>
   <div class="wrap nav">
-    <a class="brand" href="#top" data-i="name">평안노인주간보호센터</a>
-    <nav class="menu">
-      <a href="#about">센터 소개</a><a href="#day">하루 일과</a><a href="#program">프로그램</a><a href="#guide">이용 안내</a><a href="#contact">오시는 길</a>
+    <a class="brand" href="#top"><svg class="ico" viewBox="0 0 32 32"><use href="#i-leaf"/></svg><span data-i="name">평안노인주간보호센터</span></a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#service">돌봄 서비스</a><a href="#about">센터 소개</a><a href="#day">하루 일과</a><a href="#guide">이용 안내</a><a href="#calc">비용 계산</a><a href="#apply">견학 예약</a>
     </nav>
-    <a class="call" data-tel href="#contact">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
-      <span data-i="phone">[전화번호]</span>
-    </a>
+    <a class="call" data-tel href="#contact"><svg class="ico"><use href="#i-phone"/></svg><span data-i="phone">[전화번호]</span></a>
   </div>
 </header>
 
+<main>
 <section class="hero" id="top">
-  <div class="slides" id="slides">
-    <div class="slide on" data-src="img/hero1.jpg"><span class="tag">사진 1 — 프로그램 중인 어르신과 직원</span></div>
-    <div class="slide" data-src="img/hero2.jpg"><span class="tag">사진 2 — 나들이 · 마당</span></div>
-    <div class="slide" data-src="img/hero3.jpg"><span class="tag">사진 3 — 식사 · 웃는 얼굴</span></div>
-  </div>
-  <div class="wrap">
-    <h1>어르신은 즐겁게,<br>가족은 안심하게.</h1>
-    <p>아침에 집 앞에서 모시고, 하루를 함께 보내고, 저녁에 다시 집 앞까지. 인지활동과 신체활동, 정성껏 준비한 식사로 어르신의 낮을 든든하게 채워 드립니다.</p>
-    <div class="btns">
-      <a class="btn btn-w" data-tel href="#contact">전화 상담</a>
-      <a class="btn btn-o" href="#guide">이용 안내</a>
+  <div class="wrap hero-in">
+    <div class="slides" id="slides">
+      <div class="slide on" data-src="img/hero1.jpg"><span class="tag">사진 1 — 프로그램 중인 어르신과 직원</span></div>
+      <div class="slide" data-src="img/hero2.jpg"><span class="tag">사진 2 — 나들이 · 마당</span></div>
+      <div class="slide" data-src="img/hero3.jpg"><span class="tag">사진 3 — 식사 · 웃는 얼굴</span></div>
+      <div class="dots" id="dots"></div>
     </div>
-    <p class="cred"><span data-i="region">[지역명]</span> · 노인장기요양보험 지정 주간보호센터 · <span data-i="since">[개원연도]</span>년 개원 · 2024 공단 평가 최우수</p>
-  </div>
-  <div class="dots" id="dots"></div>
-</section>
-
-<div class="nums">
-  <div class="wrap">
-    <div><b data-i="since">[개원연도]</b><span>년부터 이 동네에서</span></div>
-    <div><b><span data-i="capacity">[N]</span>명</b><span>정원 · 소규모 밀착 돌봄</span></div>
-    <div><b><span data-i="staff">[N]</span>명</b><span>전문 직원</span></div>
-    <div><b><span data-i="vans">[N]</span>대</b><span>송영 차량 · <span data-i="vanArea">[송영 지역]</span></span></div>
-  </div>
-</div>
-
-<section id="who">
-  <div class="wrap split rv">
-    <div><div class="eyebrow">이런 분께</div><h2>낮 동안의 걱정을<br>나누어 드립니다</h2></div>
-    <div class="cols3">
-      <div class="item"><div class="n">01</div><h3>낮 동안 혼자 계시는 어르신</h3><p>가족이 일하는 시간, 혼자 계시면 걱정되는 어르신께 안전한 낮 공간과 친구를 드립니다.</p></div>
-      <div class="item"><div class="n">02</div><h3>인지 저하가 걱정되는 어르신</h3><p>매일 규칙적인 인지활동과 대화, 활동으로 기억력과 생활 리듬을 지켜 드립니다.</p></div>
-      <div class="item"><div class="n">03</div><h3>돌봄이 힘겨운 가족</h3><p>보호자에게도 쉼이 필요합니다. 낮 시간 돌봄을 나누어 가족의 일상을 지켜 드립니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="split rv">
-      <div><div class="eyebrow">센터장 인사</div><h2>내 부모님을<br>모신다는 마음으로</h2></div>
-      <div>
-        <p class="lead" style="margin-top:0" data-i="intro">[센터장 인사 2~3문장: 언제부터, 어떤 마음으로 운영해 왔는지]</p>
-        <p class="lead" style="margin-top:14px">어르신이 "오늘도 재미있었다" 하시고, 가족분이 "맡겨 놓고 마음이 놓인다" 하시는 곳. 센터를 열 때부터 지켜 온 약속입니다.</p>
-        <div class="sign">센터장 <span data-i="ceo">[이름]</span> 드림</div>
+    <div class="hero-text">
+      <h1>어르신은 즐겁게,<br><span class="g">가족은</span> <span class="b">안심하게.</span></h1>
+      <p class="sub">낮에는 센터에서 친구들과 함께, 필요할 때는 댁으로 찾아가는 돌봄까지. <span data-i="region">[지역명]</span>에서 <span data-i="since">[개원연도]</span>년부터 어르신의 하루를 지켜 왔습니다.</p>
+      <div class="btns">
+        <a class="btn btn-a" data-tel href="#contact"><svg class="ico"><use href="#i-phone"/></svg>전화 상담</a>
+        <a class="btn btn-l" href="#apply">견학 예약하기</a>
       </div>
     </div>
-    <div class="strengths rv">
-      <div class="strength"><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i="s1t">[강점 1 제목]</span></h3><p data-i="s1">[강점 1 설명 — 예) 정원이 작아 어르신 한 분 한 분의 상태를 매일 살핍니다.]</p></div>
-      <div class="strength"><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i="s2t">[강점 2 제목]</span></h3><p data-i="s2">[강점 2 설명 — 예) 점심과 간식을 센터에서 직접 조리합니다.]</p></div>
-      <div class="strength"><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i="s3t">[강점 3 제목]</span></h3><p data-i="s3">[강점 3 설명 — 예) 오래 함께한 직원들이 어르신을 가족처럼 모십니다.]</p></div>
+  </div>
+  <div class="wrap">
+    <div class="badges card rv">
+      <div class="badge"><svg class="ico"><use href="#i-trophy"/></svg><div><span>2024 공단 평가</span><b>최우수</b></div></div>
+      <div class="badge"><svg class="ico"><use href="#i-cal"/></svg><div><span>개원</span><b><span data-i="since">[개원연도]</span>년</b></div></div>
+      <div class="badge"><svg class="ico"><use href="#i-users"/></svg><div><span>주간보호 정원</span><b><span data-i="capacity">[N]</span>명</b></div></div>
+      <div class="badge"><svg class="ico"><use href="#i-bus"/></svg><div><span>송영 차량</span><b><span data-i="vans">[N]</span>대</b></div></div>
     </div>
   </div>
 </section>
 
-<section id="day">
-  <div class="wrap split rv">
-    <div>
-      <div class="eyebrow">센터에서의 하루</div>
-      <h2>매일 같은 리듬이<br>어르신을 편안하게 합니다</h2>
-      <div class="hours">평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span> · 공휴일 <span data-i="holiday">[운영 여부]</span><br>개인별 이용 시간은 상담 시 조정합니다.</div>
+<section class="who" id="who">
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">이런 분께</div><h2>낮 동안의 걱정을 <em>나누어</em> 드립니다</h2></div>
+    <div class="cols3 rv">
+      <div class="wcard card"><div class="ic"><svg class="ico"><use href="#i-home"/></svg></div><h3>낮 동안 혼자 계시는 어르신</h3><p>가족이 일하는 시간, 혼자 계시면 걱정되는 어르신께 안전한 낮 공간과 친구를 드립니다.</p></div>
+      <div class="wcard card"><div class="ic"><svg class="ico"><use href="#i-brain"/></svg></div><h3>인지 저하가 걱정되는 어르신</h3><p>매일 규칙적인 인지활동과 대화, 활동으로 기억력과 생활 리듬을 지켜 드립니다.</p></div>
+      <div class="wcard card"><div class="ic"><svg class="ico"><use href="#i-heart"/></svg></div><h3>돌봄이 힘겨운 가족</h3><p>보호자에게도 쉼이 필요합니다. 돌봄을 나누어 가족의 일상을 지켜 드립니다.</p></div>
     </div>
-    <ul class="tl">
-      <li><time data-i="t1">[08:30]</time><div><b>차량 등원 · 건강 체크</b><p>집 앞에서 차량으로 모시고, 도착 후 혈압·체온을 확인합니다.</p></div></li>
-      <li><time data-i="t2">[10:00]</time><div><b>오전 프로그램</b><p>회상·미술·음악 등 요일별 인지활동과 가벼운 체조.</p></div></li>
-      <li><time data-i="t3">[12:00]</time><div><b>점심 식사</b><p>치아·건강 상태에 맞춘 식사. 필요한 분은 옆에서 도와드립니다.</p></div></li>
-      <li><time data-i="t4">[13:00]</time><div><b>휴식</b><p>조용한 휴게 공간에서 편히 쉬는 시간.</p></div></li>
-      <li><time data-i="t5">[14:00]</time><div><b>오후 프로그램</b><p>신체활동, 여가·놀이 활동, 계절 행사.</p></div></li>
-      <li><time data-i="t6">[15:30]</time><div><b>간식 · 정리</b><p>간식을 드시고 하루를 마무리합니다.</p></div></li>
-      <li><time data-i="t7">[16:30]</time><div><b>차량 하원</b><p>집 앞까지 안전하게 모셔다 드리고, 가족께 오늘의 소식을 전합니다.</p></div></li>
+  </div>
+</section>
+
+<section class="services" id="service">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">돌봄 서비스</div><h2>센터에서, 또는 댁에서.<br>어르신께 맞는 돌봄을 고르세요</h2></div>
+    <div class="svc2 rv">
+      <div class="svc card">
+        <span class="tag2"><svg class="ico" style="width:16px;height:16px"><use href="#i-users"/></svg>센터에서 함께</span>
+        <h3>주간보호</h3>
+        <p>아침에 집 앞에서 모시고, 낮 동안 센터에서 활동·식사·휴식을 함께하고, 저녁에 다시 집 앞까지 모셔다 드립니다.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>운영</b> 평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>송영</b> <span data-i="vanArea">[송영 지역]</span></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>이런 분께</b> 거동이 가능하고, 사람들과 어울리며 규칙적으로 활동하시면 좋은 어르신</span></li>
+        </ul>
+        <div class="btns"><a class="btn btn-g btn-sm" href="#day">센터의 하루 보기</a></div>
+      </div>
+      <div class="svc card home">
+        <span class="tag2"><svg class="ico" style="width:16px;height:16px"><use href="#i-home"/></svg>댁으로 찾아가는</span>
+        <h3>방문요양</h3>
+        <p>요양보호사 선생님이 어르신 댁으로 찾아가 일상생활을 돕습니다. 1회 30분부터 4시간까지 필요한 만큼 이용하실 수 있습니다.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>신체활동</b> 세면·목욕·식사·배설·옷 갈아입기·이동 도움</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>생활 지원</b> 식사 준비, 어르신 방 청소, 세탁</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span><b>정서 지원</b> 말벗, 병원·관공서 동행, 산책</span></li>
+        </ul>
+        <div class="match"><b>보호자 맞춤 요양보호사 안내</b>원하시는 활동 지역, 시간, 경험(치매 돌봄 등)을 남겨 주시면 상담 후 지역·일정·인력 상황에 맞는 선생님을 안내해 드립니다.</div>
+        <div class="btns"><a class="btn btn-a btn-sm" href="#apply" data-tab="match">선생님 조건 남기기</a></div>
+      </div>
+    </div>
+    <div class="both card rv"><svg class="ico"><use href="#i-route"/></svg><div><b>두 서비스를 함께 이용하실 수도 있습니다.</b> 예) 평일 낮엔 주간보호, 주말이나 저녁엔 방문요양. 등급별 월 한도 안에서 나눠 쓰시면 됩니다.</div></div>
+  </div>
+</section>
+
+<section id="finder">
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">맞춤 돌봄 찾기</div><h2>우리 부모님께는<br>어떤 돌봄이 맞을까요?</h2><p class="lead">다섯 가지 질문에 답하시면 먼저 상담해 보실 서비스를 알려 드립니다.</p></div>
+    <div class="finder-box card rv" id="finderBox">
+      <div class="q" data-q="move"><p>차를 타고 센터까지 다니실 수 있을 만큼 거동이 되시나요?<small>휠체어를 쓰셔도 차량 승하차가 가능하면 '예'</small></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="q" data-q="alone"><p>낮 동안 집에 혼자 계시는 시간이 길어요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="q" data-q="social"><p>사람들과 어울리고 활동하시는 걸 좋아하세요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="q" data-q="house"><p>집에서 목욕·식사 준비·청소 같은 생활 도움이 꼭 필요하세요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="q" data-q="extra"><p>낮 시간 말고도 저녁이나 주말에 돌봄 손길이 필요해요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="fresult" id="fresult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about" style="background:var(--paper)">
+  <div class="wrap about-grid">
+    <div class="about-photo rv" data-src="img/about.jpg"></div>
+    <div class="rv">
+      <div class="eyebrow">센터장 인사</div>
+      <h2>“내 부모님을<br>모신다는 마음으로”</h2>
+      <p class="lead" data-i="intro">[센터장 인사 2~3문장: 언제부터, 어떤 마음으로 운영해 왔는지]</p>
+      <p class="lead" style="margin-top:12px">어르신이 "오늘도 재미있었다" 하시고, 가족분이 "맡겨 놓고 마음이 놓인다" 하시는 곳. 센터를 열 때부터 지켜 온 약속입니다.</p>
+      <div class="sign">센터장 <span data-i="ceo">[이름]</span> 드림</div>
+      <div class="strengths">
+        <div class="strength"><svg class="ico"><use href="#i-bowl"/></svg><h3 data-i="s1t">[강점 1 제목]</h3><p data-i="s1">[강점 1 설명]</p></div>
+        <div class="strength"><svg class="ico"><use href="#i-users"/></svg><h3 data-i="s2t">[강점 2 제목]</h3><p data-i="s2">[강점 2 설명]</p></div>
+        <div class="strength"><svg class="ico"><use href="#i-pin"/></svg><h3 data-i="s3t">[강점 3 제목]</h3><p data-i="s3">[강점 3 설명]</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="day" id="day">
+  <div class="wrap">
+    <div class="head rv">
+      <div><div class="eyebrow">주간보호 · 센터에서의 하루</div><h2>매일 같은 리듬이<br>어르신을 편안하게 합니다</h2></div>
+      <div class="hours">평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span><br>공휴일 <span data-i="holiday">[운영 여부]</span> · 개인별 이용 시간은 상담 시 조정합니다.</div>
+    </div>
+    <ul class="tl rv">
+      <li><span class="dot"><svg class="ico"><use href="#i-bus"/></svg></span><div><time data-i="t1">[08:30]</time><b>등원 · 건강 체크</b><p>집 앞에서 모시고, 도착 후 혈압·체온을 확인합니다.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-brain"/></svg></span><div><time data-i="t2">[10:00]</time><b>오전 프로그램</b><p>회상·미술·음악 등 인지활동과 가벼운 체조.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-bowl"/></svg></span><div><time data-i="t3">[12:00]</time><b>점심 식사</b><p>치아·건강 상태에 맞춘 식사를 도와드립니다.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-sofa"/></svg></span><div><time data-i="t4">[13:00]</time><b>휴식</b><p>조용한 휴게 공간에서 편히 쉬는 시간.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-run"/></svg></span><div><time data-i="t5">[14:00]</time><b>오후 프로그램</b><p>신체활동, 여가·놀이, 계절 행사.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-cup"/></svg></span><div><time data-i="t6">[15:30]</time><b>간식 · 정리</b><p>간식을 드시고 하루를 마무리합니다.</p></div></li>
+      <li><span class="dot"><svg class="ico"><use href="#i-home"/></svg></span><div><time data-i="t7">[17:00]</time><b>하원</b><p>집 앞까지 모셔다 드리고 가족께 소식을 전합니다.</p></div></li>
     </ul>
   </div>
 </section>
 
-<section id="program" style="padding-top:0">
+<section id="program">
   <div class="wrap">
-    <div class="split rv" style="align-items:end">
-      <div><div class="eyebrow">프로그램</div><h2>몸과 마음을<br>함께 움직입니다</h2></div>
-      <p class="lead" style="margin:0">"오늘도 재미있었다"는 말이 나오도록. 어르신 상태에 따라 개별 조정합니다.</p>
-    </div>
+    <div class="head rv"><div class="eyebrow">프로그램</div><h2>몸과 마음을 <em>함께</em> 움직입니다</h2><p class="lead">"오늘도 재미있었다"는 말이 나오도록. 어르신 상태에 따라 개별로 조정합니다.</p></div>
     <div class="pgrid rv">
-      <div class="photo" data-src="img/p1.jpg">사진 — 프로그램 진행 모습</div>
-      <div class="photo" data-src="img/p2.jpg">사진 — 식사</div>
-      <div class="photo" data-src="img/p3.jpg">사진 — 나들이</div>
-      <div class="photo" data-src="img/p4.jpg">사진 — 만들기</div>
-      <div class="photo" data-src="img/p5.jpg">사진 — 생신 잔치</div>
-    </div>
-    <div class="plist rv">
-      <div class="pitem"><h3>인지활동</h3><p>회상 활동, 그림·색칠, 종이접기, 숫자·글자 놀이, 노래 부르기로 기억력과 집중력을 유지합니다.</p></div>
-      <div class="pitem"><h3>신체활동</h3><p>의자 체조, 밴드 운동, 공놀이, 걷기. 낙상 예방과 근력 유지를 위한 매일 운동.</p></div>
-      <div class="pitem"><h3>여가·정서</h3><p>미술·음악·원예, 영화 감상, 생신 잔치, 계절 행사로 즐거움과 소속감을 드립니다.</p></div>
-      <div class="pitem"><h3>식사·영양</h3><p data-i="meal">[식사 제공 방식 — 예) 센터에서 직접 조리한 점심과 오후 간식. 죽·다진 식사 개인별 조정]</p></div>
-      <div class="pitem"><h3>송영 서비스</h3><p><span data-i="vanArea">[송영 지역]</span> 집 앞까지 차량 <span data-i="vans">[N]</span>대로 안전하게. 승하차 시 직원이 동행합니다.</p></div>
-      <div class="pitem"><h3>건강 관리</h3><p>매일 혈압·체온 확인, 복약 도움. 변화가 있으면 보호자께 즉시 연락. <span data-i="health">[물리치료사 등 인력이 있으면 기재]</span></p></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p2.jpg"><svg class="ico"><use href="#i-brain"/></svg></div><div class="pbody"><h3>인지활동</h3><p>회상 활동, 그림·색칠, 종이접기, 숫자·글자 놀이, 노래로 기억력과 집중력을 유지합니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p1.jpg"><svg class="ico"><use href="#i-run"/></svg></div><div class="pbody"><h3>신체활동</h3><p>의자 체조, 밴드 운동, 공놀이, 걷기. 낙상 예방과 근력 유지를 위해 매일 움직입니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p3.jpg"><svg class="ico"><use href="#i-music"/></svg></div><div class="pbody"><h3>여가 · 정서</h3><p>미술·음악·원예, 나들이, 생신 잔치, 계절 행사로 즐거움과 소속감을 드립니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p4.jpg"><svg class="ico"><use href="#i-bowl"/></svg></div><div class="pbody"><h3>식사 · 영양</h3><p data-i="meal">[식사 제공 방식]</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p5.jpg"><svg class="ico"><use href="#i-bus"/></svg></div><div class="pbody"><h3>송영 서비스</h3><p>차량 <span data-i="vans">[N]</span>대로 집 앞까지 안전하게 모십니다. 승하차 때 직원이 함께합니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p6.jpg"><svg class="ico"><use href="#i-steth"/></svg></div><div class="pbody"><h3>건강 관리</h3><p>매일 혈압·체온 확인, 복약 도움. 변화가 있으면 보호자께 바로 연락드립니다. <span data-i="health">[간호 인력]</span></p></div></div>
     </div>
   </div>
 </section>
 
 <section class="guide" id="guide">
-  <div class="wrap split rv">
-    <div>
-      <div class="eyebrow">이용 안내</div>
-      <h2>등급이 있으시면 바로,<br>없으시면 신청부터 함께</h2>
-      <p class="lead">등급 신청은 국민건강보험공단(1577-1000). 절차가 어려우시면 센터로 전화 주세요. 같이 정리해 드립니다.</p>
-    </div>
-    <div class="rows">
-      <div class="row"><b>이용 대상</b><div>노인장기요양보험 <span data-i="grades">[1~5]</span>등급 · 인지지원등급 판정을 받으신 어르신. 등급이 없는 65세 이상 노인성 질환 어르신도 상담해 드립니다.</div></div>
-      <div class="row"><b>비용</b><div>공단 고시 급여 비용 중 본인부담금 15% (감경 대상자 9%·6%, 기초생활수급자 0%) + 비급여(식사·간식) 별도. 등급과 이용 시간에 따라 다르므로 상담 시 월 예상 비용을 정확히 안내해 드립니다.</div></div>
-      <div class="row"><b>준비 서류</b><div>장기요양인정서, 표준장기이용계획서, 복용 약 목록</div></div>
-      <div class="row"><b>송영</b><div><span data-i="vanArea">[송영 지역]</span> · 차량 <span data-i="vans">[N]</span>대 운행</div></div>
-    </div>
-  </div>
   <div class="wrap">
-    <div class="steps rv">
-      <div class="step"><i>STEP 1</i><b>전화 상담</b><p>어르신 상태와 거주 지역을 여쭙고 송영 가능 여부를 바로 알려 드립니다.</p></div>
-      <div class="step"><i>STEP 2</i><b>센터 견학</b><p>보호자와 어르신이 함께 오셔서 직접 보세요. 오전 프로그램 시간을 권합니다.</p></div>
-      <div class="step"><i>STEP 3</i><b>하루 체험</b><p>하루 이용해 보시고 어르신이 편안해하시는지 확인합니다.</p></div>
-      <div class="step"><i>STEP 4</i><b>계약 · 이용 시작</b><p>이용 계약 후 개인별 급여 제공 계획을 세우고 시작합니다.</p></div>
+    <div class="head rv"><div class="eyebrow">이용 안내</div><h2>등급이 있으시면 바로,<br>없으시면 신청부터 함께</h2><p class="lead">장기요양등급 신청은 국민건강보험공단(1577-1000)에서 합니다. 절차가 어려우시면 센터로 전화 주세요. 같이 정리해 드립니다.</p></div>
+    <div class="g4 rv">
+      <div class="gcard card"><h3><svg class="ico"><use href="#i-users"/></svg>이용 대상</h3><ul><li>주간보호: 장기요양 1~5등급, 인지지원등급</li><li>방문요양: 장기요양 1~5등급</li><li>등급이 없으셔도 신청 방법부터 상담해 드립니다</li></ul></div>
+      <div class="gcard card"><h3><svg class="ico"><use href="#i-won"/></svg>비용</h3><ul><li>공단이 대부분을 내고, 본인부담은 15%</li><li>감경 대상 9%·6%, 기초생활수급 0%</li><li>주간보호 식사·간식비는 별도</li><li><a href="#calc" style="color:var(--brown);font-weight:700;text-decoration:underline">예상 비용 계산해 보기</a></li></ul></div>
+      <div class="gcard card"><h3><svg class="ico"><use href="#i-doc"/></svg>준비 서류</h3><ul><li>장기요양인정서</li><li>개인별 장기요양이용계획서</li><li>복용 중인 약 목록</li></ul></div>
+      <div class="gcard card"><h3><svg class="ico"><use href="#i-route"/></svg>이용 절차</h3>
+        <ol class="steps">
+          <li><i>1</i><span><b>전화 상담</b>어르신 상태와 사시는 곳을 여쭙고, 맞는 서비스를 안내합니다.</span></li>
+          <li><i>2</i><span><b>센터 견학 · 방문 상담</b>직접 보시거나, 댁으로 찾아가 상담합니다.</span></li>
+          <li><i>3</i><span><b>계약 · 이용 시작</b>계약 후 개인별 급여 계획을 세우고 시작합니다.</span></li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section id="calc">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">예상 이용료 계산기</div><h2>한 달에 얼마쯤 드는지<br>미리 계산해 보세요</h2><p class="lead"><span id="feeYear">2026</span>년 공단 고시 수가 기준입니다. 정확한 금액은 상담 때 다시 확인해 드립니다.</p></div>
+    <div class="calc rv">
+      <div class="cform card">
+        <div class="field"><span class="lbl">이용할 서비스</span>
+          <div class="seg" id="cSvc" role="group" aria-label="이용할 서비스">
+            <button type="button" data-v="day" aria-pressed="true">주간보호</button>
+            <button type="button" data-v="home" aria-pressed="false">방문요양</button>
+            <button type="button" data-v="both" aria-pressed="false">둘 다</button>
+          </div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="cGrade">장기요양 등급</label>
+            <select id="cGrade"><option value="0">1등급</option><option value="1">2등급</option><option value="2" selected>3등급</option><option value="3">4등급</option><option value="4">5등급</option><option value="5">인지지원등급</option></select>
+          </div>
+          <div class="field"><label for="cRate">본인부담 구분</label>
+            <select id="cRate"><option value="0.15">일반 (15%)</option><option value="0.09">감경 (9%)</option><option value="0.06">감경 (6%)</option><option value="0">기초생활수급 (0%)</option></select>
+          </div>
+        </div>
+        <div class="sub-block" id="cDayBlock">
+          <h4>주간보호</h4>
+          <div class="two">
+            <div class="field"><label for="cDayH">하루 이용 시간</label>
+              <select id="cDayH"><option value="0">3~6시간</option><option value="1">6~8시간</option><option value="2" selected>8~10시간</option><option value="3">10~13시간</option><option value="4">13시간 넘게</option></select>
+            </div>
+            <div class="field"><label for="cDayN">일주일에</label>
+              <select id="cDayN"><option value="1">1일</option><option value="2">2일</option><option value="3">3일</option><option value="4">4일</option><option value="5" selected>5일</option><option value="6">6일</option></select>
+            </div>
+          </div>
+        </div>
+        <div class="sub-block" id="cHomeBlock" hidden>
+          <h4>방문요양</h4>
+          <div class="two">
+            <div class="field"><label for="cHomeM">1회 방문 시간</label>
+              <select id="cHomeM"><option value="30">30분</option><option value="60">1시간</option><option value="90">1시간 30분</option><option value="120">2시간</option><option value="150">2시간 30분</option><option value="180" selected>3시간</option><option value="210">3시간 30분</option><option value="240">4시간</option></select>
+            </div>
+            <div class="field"><label for="cHomeN">일주일에</label>
+              <select id="cHomeN"><option value="1">1회</option><option value="2">2회</option><option value="3">3회</option><option value="4">4회</option><option value="5" selected>5회</option><option value="6">6회</option><option value="7">7회</option></select>
+            </div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:0">한 달은 일주일 × 4.3주로 계산합니다.</p>
+      </div>
+      <div class="cout card" aria-live="polite">
+        <div style="font-size:16px;font-weight:700;color:var(--ink2)">예상 월 본인부담금</div>
+        <div class="big" id="cTotal">-</div>
+        <dl>
+          <dt>공단 기준 급여비용</dt><dd id="cGross">-</dd>
+          <dt>월 한도액</dt><dd id="cLimit">-</dd>
+          <dt>한도 안 본인부담</dt><dd id="cIn">-</dd>
+          <dt>한도 초과분 (전액 본인)</dt><dd id="cOver">-</dd>
+          <dt id="cMealT">식사 · 간식비</dt><dd id="cMeal">별도</dd>
+        </dl>
+        <div class="msg" id="cMsg"></div>
+        <p class="note">공단 고시 수가로 계산한 참고용 금액이며, 실제 비용은 이용 계획과 가산·감산 기준에 따라 달라질 수 있습니다.</p>
+        <div class="btns" style="margin-top:16px"><a class="btn btn-a btn-sm" data-tel href="#contact">정확한 비용 상담</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">견학 예약 · 상담 신청</div><h2>원하시는 날을 고르시면<br>센터에서 확인 후 연락드립니다</h2><p class="lead">신청만으로 예약이 확정되지는 않습니다. 담당자가 일정을 확인해 연락드리면 확정됩니다.</p></div>
+    <div class="tabs rv" role="tablist">
+      <button type="button" role="tab" aria-selected="true" aria-controls="fVisit" id="tVisit">센터 견학 예약</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="fMatch" id="tMatch">요양보호사 상담 신청</button>
+    </div>
+
+    <form class="aform card rv" id="fVisit" role="tabpanel" aria-labelledby="tVisit" novalidate>
+      <div class="two">
+        <div class="field"><label for="vDate">희망 날짜</label><input type="date" id="vDate" required></div>
+        <div class="field"><span class="lbl">희망 시간</span><div class="chips" id="vTimes"></div></div>
+      </div>
+      <div class="field"><span class="lbl">함께 오시는 분</span>
+        <div class="chips">
+          <label><input type="radio" name="vWho" value="보호자만" checked><span>보호자만</span></label>
+          <label><input type="radio" name="vWho" value="어르신과 함께"><span>어르신과 함께</span></label>
+        </div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="vName">보호자 성함</label><input type="text" id="vName" autocomplete="name" required></div>
+        <div class="field"><label for="vTel">연락받을 번호</label><input type="tel" id="vTel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required></div>
+      </div>
+      <div class="field"><label for="vMemo">궁금하신 점 <span style="font-weight:400;color:var(--mute)">(선택)</span></label><textarea id="vMemo" placeholder="예) 등급 신청 전인데 견학 가능할까요?"></textarea></div>
+      <p class="err" id="vErr"></p>
+      <div class="btns"><button class="btn btn-a" type="submit">신청 내용 만들기</button></div>
+      <div class="preview" id="vPrev"><pre></pre><div class="btns send"></div></div>
+    </form>
+
+    <form class="aform card rv" id="fMatch" role="tabpanel" aria-labelledby="tMatch" hidden novalidate>
+      <div class="two">
+        <div class="field"><label for="mArea">어르신 사시는 곳</label><input type="text" id="mArea" placeholder="예) 화순읍 ○○리" required></div>
+        <div class="field"><label for="mGrade">장기요양 등급</label>
+          <select id="mGrade"><option>1등급</option><option>2등급</option><option selected>3등급</option><option>4등급</option><option>5등급</option><option>등급 신청 전</option></select>
+        </div>
+      </div>
+      <div class="field"><span class="lbl">원하시는 요일</span>
+        <div class="chips" id="mDays"></div>
+      </div>
+      <div class="field"><span class="lbl">원하시는 시간대</span>
+        <div class="chips">
+          <label><input type="checkbox" name="mTime" value="오전"><span>오전</span></label>
+          <label><input type="checkbox" name="mTime" value="오후"><span>오후</span></label>
+          <label><input type="checkbox" name="mTime" value="저녁"><span>저녁</span></label>
+          <label><input type="checkbox" name="mTime" value="시간 협의"><span>협의 가능</span></label>
+        </div>
+      </div>
+      <div class="field"><span class="lbl">필요한 도움 · 원하는 경험</span>
+        <div class="chips">
+          <label><input type="checkbox" name="mNeed" value="치매 어르신 돌봄 경험"><span>치매 돌봄 경험</span></label>
+          <label><input type="checkbox" name="mNeed" value="거동이 어려운 분 돌봄 경험"><span>거동 불편 돌봄</span></label>
+          <label><input type="checkbox" name="mNeed" value="목욕 도움"><span>목욕 도움</span></label>
+          <label><input type="checkbox" name="mNeed" value="식사 준비"><span>식사 준비</span></label>
+          <label><input type="checkbox" name="mNeed" value="병원 동행"><span>병원 동행</span></label>
+          <label><input type="checkbox" name="mNeed" value="말벗 · 산책"><span>말벗 · 산책</span></label>
+        </div>
+      </div>
+      <div class="field"><span class="lbl">선생님 성별</span>
+        <div class="chips">
+          <label><input type="radio" name="mSex" value="상관없음" checked><span>상관없음</span></label>
+          <label><input type="radio" name="mSex" value="여성"><span>여성</span></label>
+          <label><input type="radio" name="mSex" value="남성"><span>남성</span></label>
+        </div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="mName">보호자 성함</label><input type="text" id="mName" autocomplete="name" required></div>
+        <div class="field"><label for="mTel">연락받을 번호</label><input type="tel" id="mTel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required></div>
+      </div>
+      <div class="field"><label for="mMemo">더 알려 주실 내용 <span style="font-weight:400;color:var(--mute)">(선택)</span></label><textarea id="mMemo" placeholder="예) 주 3회 오후 3시간 정도 생각하고 있어요."></textarea></div>
+      <p class="note" style="margin-top:0">상담 후 지역 · 일정 · 인력 상황에 따라 적합한 선생님을 안내해 드립니다. 원하시는 조건이 모두 맞지 않을 수 있습니다.</p>
+      <p class="err" id="mErr"></p>
+      <div class="btns" style="margin-top:18px"><button class="btn btn-a" type="submit">신청 내용 만들기</button></div>
+      <div class="preview" id="mPrev"><pre></pre><div class="btns send"></div></div>
+    </form>
+    <p class="privacy rv">입력하신 내용은 홈페이지에 저장되지 않습니다. 직접 문자나 카카오톡으로 센터에 보내시는 방식이며, 상담과 일정 안내에만 사용합니다. 어르신 건강 상태 같은 자세한 내용은 통화로 말씀해 주세요.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="background:var(--paper)">
   <div class="wrap grid rv">
     <div>
       <div class="eyebrow">견학 · 상담</div>
-      <h2>직접 오셔서<br>보시면 더 좋습니다</h2>
-      <a class="tel" data-tel href="#contact" data-i="phone">[전화번호]</a>
-      <p style="color:var(--ink2)">평일 <span data-i="hours">[운영시간]</span> · 통화가 어려우시면 문자 남겨 주세요.</p>
+      <h2>직접 오셔서 보시면<br>더 좋습니다</h2>
+      <p class="lead">궁금한 점이 있으시면 편하게 전화 주세요.</p>
+      <a class="btn btn-a tel-btn" data-tel href="#contact"><svg class="ico"><use href="#i-phone"/></svg><span data-i="phone">[전화번호]</span></a>
+      <div class="btns">
+        <a class="btn btn-k btn-sm" data-i-href="kakao" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>카카오톡 상담</a>
+        <a class="btn btn-l btn-sm" href="#apply">견학 예약 신청</a>
+      </div>
+      <div class="hrs"><svg class="ico"><use href="#i-clock"/></svg><span>평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span><br>통화가 어려우시면 카카오톡으로 남겨 주세요.</span></div>
       <div class="links">
-        <a class="chip" data-tel href="#contact">전화하기</a>
-        <a class="chip" data-i-href="kakao" href="#" target="_blank" rel="noopener">카카오톡 상담</a>
-        <a class="chip" data-i-href="blog" href="#" target="_blank" rel="noopener">센터 소식 (블로그)</a>
-        <a class="chip" data-i-href="naverMap" href="#" target="_blank" rel="noopener">네이버 지도</a>
+        <a data-i-href="blog" href="#" target="_blank" rel="noopener">센터 소식 (블로그)</a>
+        <a data-i-href="naverMap" href="#" target="_blank" rel="noopener">네이버 지도</a>
       </div>
     </div>
     <div>
       <a class="map" id="mapbox" href="https://place.map.kakao.com/1801013849" target="_blank" rel="noopener" aria-label="카카오맵에서 평안노인주간보호센터 위치 크게 보기">
         <!-- 카카오맵 정적 지도. MX·MY 는 센터 좌표(카카오 WCONGNAMUL). 핀은 지도 한가운데에 CSS 로 올림 -->
         <img src="https://staticmap.kakao.com/map/mapservice?FORMAT=PNG&amp;SCALE=2.5&amp;MX=496662&amp;MY=433136&amp;S=0&amp;IW=800&amp;IH=500&amp;LANG=0&amp;COORDSTM=WCONGNAMUL&amp;logo=kakao_logo" alt="평안노인주간보호센터 위치 지도 (화순읍 충의로 70)" loading="lazy">
-        <span class="pin"><b>평안노인주간보호센터</b><svg viewBox="0 0 26 34" aria-hidden="true"><path d="M13 0C5.8 0 0 5.7 0 12.8 0 22.4 13 34 13 34s13-11.6 13-21.2C26 5.7 20.2 0 13 0z" fill="#1f6b52"/><circle cx="13" cy="12.5" r="5" fill="#fff"/></svg></span>
+        <span class="pin"><b>평안노인주간보호센터</b><svg viewBox="0 0 26 34" aria-hidden="true"><path d="M13 0C5.8 0 0 5.7 0 12.8 0 22.4 13 34 13 34s13-11.6 13-21.2C26 5.7 20.2 0 13 0z" fill="#9a4a1f"/><circle cx="13" cy="12.5" r="5" fill="#fff"/></svg></span>
         <span class="more">카카오맵에서 크게 보기 ↗</span>
       </a>
-      <div class="addr"><span data-i="address">[도로명 주소]</span><br><span data-i="landmark">[주변 안내 — 예) ○○초등학교 맞은편 2층]</span></div>
+      <div class="addr"><svg class="ico"><use href="#i-pin"/></svg><span><span data-i="address">[도로명 주소]</span><br><span data-i="landmark">[주변 안내]</span></span></div>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div><b style="color:var(--ink)" data-i="name">평안노인주간보호센터</b> · 대표 <span data-i="ceo">[대표자]</span> · 장기요양기관 지정번호 <span data-i="regno">[지정번호]</span><br><span data-i="address">[도로명 주소]</span> · ☎ <span data-i="phone">[전화번호]</span> · 사업자등록번호 <span data-i="bizno">[사업자번호]</span></div>
+    <div><b data-i="name">평안노인주간보호센터</b> · 대표 <span data-i="ceo">[대표자]</span> · 장기요양기관 지정번호 <span data-i="regno">[지정번호]</span><br><span data-i="address">[도로명 주소]</span> · ☎ <span data-i="phone">[전화번호]</span> · 사업자등록번호 <span data-i="bizno">[사업자번호]</span></div>
     <div>© <span id="year"></span> <span data-i="name">평안노인주간보호센터</span></div>
   </div>
 </footer>
 
 <div class="callbar">
-  <a class="btn btn-a" data-tel href="#contact">전화 상담</a>
-  <a class="btn btn-l" href="#guide">이용 안내</a>
+  <a class="btn btn-a" data-tel href="#contact"><svg class="ico"><use href="#i-phone"/></svg>전화 상담</a>
+  <a class="btn btn-l" href="#apply">견학 예약</a>
 </div>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
 /* ===== 여기만 채우면 됩니다 ==========================================
@@ -377,42 +722,233 @@ const INFO = {
   blog:     "https://blog.naver.com/sng04211",
   naverMap: "https://map.naver.com/p/search/%ED%99%94%EC%88%9C%20%ED%8F%89%EC%95%88%EB%85%B8%EC%9D%B8%EC%A3%BC%EA%B0%84%EB%B3%B4%ED%98%B8%EC%84%BC%ED%84%B0", // 플레이스 등록 후 공유 링크로 교체
   kakao:    "http://pf.kakao.com/_xdTyxdX",                         // 카카오톡 채널 주소 (비우면 버튼 숨김)
+  sms:      "",                  // 견학·상담 신청을 문자로 받을 휴대폰 번호 (비우면 문자 버튼 숨김)
+  naverBooking: "",              // 네이버 예약 주소 (넣으면 견학 예약에 '네이버 예약' 버튼이 생김)
+  visitTimes: ["오전 10시", "오전 11시", "오후 2시", "오후 3시", "오후 4시"],  // 견학 가능 시간
+  mealFee:  0,                   // 주간보호 하루 식사·간식비(원). 0 이면 계산기에 '별도'로 표시
+};
+
+/* ===== 장기요양 수가 (매년 1월 공단 고시에 맞춰 고칩니다) =================
+   등급 순서: 1등급, 2등급, 3등급, 4등급, 5등급, 인지지원등급
+   ==================================================================== */
+const FEE = {
+  year: 2026,
+  limit: [2512900, 2331200, 1528200, 1409700, 1208900, 676320],   // 재가급여 월 한도액
+  day: [                                                          // 주야간보호 하루 급여비용
+    [41820, 38720, 35740, 34120, 32490, 32490],   // 3~6시간
+    [56060, 51930, 47940, 46300, 44650, 44650],   // 6~8시간
+    [69730, 64590, 59640, 58010, 56360, 56360],   // 8~10시간
+    [76820, 71160, 65750, 64090, 62460, 56360],   // 10~13시간
+    [82370, 76310, 70500, 68860, 67240, 56360],   // 13시간 초과
+  ],
+  home: {30:17450, 60:25320, 90:34120, 120:43430, 150:50640, 180:57020, 210:63530, 240:70080},  // 방문요양 1회
+  dayBonus: [0.1, 0.1, 0.2, 0.2, 0.2, 0],   // 주간보호 월 15일 이상·8시간 이상 이용 시 한도 추가 비율
 };
 
 (function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+
   // 값 채우기
-  document.querySelectorAll('[data-i]').forEach(el=>{
+  $$('[data-i]').forEach(el=>{
     const v = INFO[el.dataset.i]; if (v === undefined) return;
     el.textContent = v; el.classList.toggle('ph', String(v).trim().startsWith('['));
   });
-  document.querySelectorAll('[data-i-href]').forEach(el=>{
+  $$('[data-i-href]').forEach(el=>{
     const v = INFO[el.dataset.iHref]; if (v) el.href = v; else el.style.display = 'none';
   });
   const tel = INFO.phone.replace(/[^0-9+]/g,'');
-  if (tel) document.querySelectorAll('[data-tel]').forEach(a=>a.href='tel:'+tel);
-  document.getElementById('year').textContent = new Date().getFullYear();
+  if (tel) $$('[data-tel]').forEach(a=>a.href='tel:'+tel);
+  $('#year').textContent = new Date().getFullYear();
 
-  // 사진: 파일이 있으면 표시, 없으면 자리표시 유지
-  document.querySelectorAll('.photo[data-src]').forEach(box=>{
-    const img = new Image(); img.onload=()=>{box.textContent='';box.appendChild(img);}; img.src=box.dataset.src;
+  // 사진: 파일이 있으면 표시, 없으면 아이콘(자리표시) 유지
+  $$('.pimg[data-src]').forEach(box=>{
+    const img=new Image(); img.alt=''; img.onload=()=>box.appendChild(img); img.onerror=()=>box.classList.add('empty'); img.src=box.dataset.src;
   });
-  const slides=[...document.querySelectorAll('.slide')], dots=document.getElementById('dots');
+  $$('.about-photo[data-src]').forEach(box=>{
+    const img=new Image(); img.alt=''; img.onload=()=>box.appendChild(img); img.onerror=()=>{ box.parentElement.classList.add('solo'); box.remove(); }; img.src=box.dataset.src;
+  });
+  const slides=$$('.slide'), dots=$('#dots');
   slides.forEach((s,i)=>{
-    const img=new Image(); img.onload=()=>{s.style.backgroundImage=`url("${s.dataset.src}")`; s.querySelector('.tag').remove();}; img.src=s.dataset.src;
+    const img=new Image(); img.onload=()=>{s.style.backgroundImage=`url("${s.dataset.src}")`; s.querySelector('.tag')?.remove();}; img.src=s.dataset.src;
     const d=document.createElement('i'); if(i===0)d.className='on'; d.onclick=()=>go(i); dots.appendChild(d);
   });
   let cur=0, timer;
-  function go(i){ slides[cur].classList.remove('on'); dots.children[cur].classList.remove('on'); cur=i; slides[cur].classList.add('on'); dots.children[cur].classList.add('on'); clearInterval(timer); timer=setInterval(()=>go((cur+1)%slides.length),5000); }
-  timer=setInterval(()=>go((cur+1)%slides.length),5000);
-
-  // 헤더: 스크롤하면 흰 배경
-  const hd=document.getElementById('hd');
-  const onS=()=>hd.classList.toggle('solid', window.scrollY>window.innerHeight-120);
-  addEventListener('scroll',onS,{passive:true}); onS();
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(i){ slides[cur].classList.remove('on'); dots.children[cur].classList.remove('on'); cur=i; slides[cur].classList.add('on'); dots.children[cur].classList.add('on'); clearInterval(timer); if(!still) timer=setInterval(()=>go((cur+1)%slides.length),5000); }
+  if(!still) timer=setInterval(()=>go((cur+1)%slides.length),5000);
 
   // 등장 애니메이션
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+  $$('.rv').forEach(el=>io.observe(el));
+
+  // 토스트
+  const toast=$('#toast'); let tt;
+  function say(t){ toast.textContent=t; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),4200); }
+
+  /* ---------- 맞춤 돌봄 찾기 ---------- */
+  const ans={};
+  const fres=$('#fresult');
+  $$('#finderBox .q').forEach(q=>{
+    q.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+      q.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed', x===b));
+      ans[q.dataset.q]=b.dataset.v==='1'; showFinder();
+    });
+  });
+  function showFinder(){
+    const n=Object.keys(ans).length;
+    fres.className='fresult show';
+    if(n<5){ fres.innerHTML=`<p class="wait">${5-n}개 질문이 남았어요.</p>`; return; }
+    let type;
+    if(!ans.move) type='B';
+    else if(ans.extra || ans.house) type='C';
+    else if(ans.alone || ans.social) type='A';
+    else type='C';
+    const R={
+      A:{cls:'', t:'유형 A', h:'주간보호를 먼저 추천드려요', p:'낮 동안 센터에서 친구들과 활동하고 식사하시는 생활이 잘 맞으실 것 같아요. 송영 차량으로 집 앞에서 모시니, 먼저 센터를 둘러보세요.', a:`<a class="btn btn-a btn-sm" href="#apply" data-tab="visit">센터 견학 예약</a><a class="btn btn-l btn-sm" href="#day">센터의 하루 보기</a>`},
+      B:{cls:'b', t:'유형 B', h:'방문요양을 먼저 추천드려요', p:'센터까지 다니시기 어렵다면 요양보호사 선생님이 댁으로 찾아가는 방문요양이 편하실 거예요. 원하시는 조건을 남겨 주시면 맞는 선생님을 안내해 드립니다.', a:`<a class="btn btn-a btn-sm" href="#apply" data-tab="match">선생님 조건 남기기</a><a class="btn btn-l btn-sm" data-tel href="tel:${tel}">전화 상담</a>`},
+      C:{cls:'', t:'유형 C', h:'두 서비스를 함께 상담해 보세요', p:'센터 활동도 도움이 되시고, 댁에서의 생활 도움도 필요해 보여요. 평일 낮엔 주간보호, 그 밖의 시간엔 방문요양처럼 함께 쓰는 방법을 상담해 드립니다.', a:`<a class="btn btn-a btn-sm" data-tel href="tel:${tel}">전화 상담</a><a class="btn btn-l btn-sm" href="#calc" data-svc="both">함께 쓰면 비용은?</a>`},
+    }[type];
+    fres.className='fresult show '+R.cls;
+    fres.innerHTML=`<div class="type">${R.t}</div><h3>${R.h}</h3><p>${R.p}</p><div class="btns">${R.a}</div><p class="note">간단한 참고용 안내예요. 상담에서 어르신 상태를 듣고 정확히 안내해 드립니다.</p>`;
+  }
+
+  /* ---------- 이용료 계산기 ---------- */
+  $('#feeYear').textContent=FEE.year;
+  let svc='day';
+  const segBtns=$$('#cSvc button');
+  function setSvc(v){
+    svc=v; segBtns.forEach(b=>b.setAttribute('aria-pressed', b.dataset.v===v));
+    $('#cDayBlock').hidden = v==='home'; $('#cHomeBlock').hidden = v==='day';
+    calc();
+  }
+  segBtns.forEach(b=>b.onclick=()=>setSvc(b.dataset.v));
+  ['#cGrade','#cRate','#cDayH','#cDayN','#cHomeM','#cHomeN'].forEach(s=>$(s).onchange=calc);
+  function calc(){
+    const g=+$('#cGrade').value, rate=+$('#cRate').value, msg=$('#cMsg');
+    const useDay=svc!=='home', useHome=svc!=='day';
+    msg.className='msg'; msg.textContent='';
+    if(useHome && g===5){
+      ['#cGross','#cLimit','#cIn','#cOver'].forEach(s=>$(s).textContent='-');
+      $('#cTotal').textContent='-';
+      msg.className='msg show'; msg.textContent='인지지원등급은 방문요양을 이용할 수 없어요. 주간보호로 계산해 보세요.';
+      return;
+    }
+    const dayN=useDay? Math.round(+$('#cDayN').value*4.3):0;
+    const homeN=useHome? Math.round(+$('#cHomeN').value*4.3):0;
+    const dayH=+$('#cDayH').value;
+    const gross=(useDay? FEE.day[dayH][g]*dayN:0) + (useHome? FEE.home[$('#cHomeM').value]*homeN:0);
+    let limit=FEE.limit[g];
+    const bonus = useDay && dayH>=2 && dayN>=15 ? FEE.dayBonus[g] : 0;
+    limit=Math.round(limit*(1+bonus));
+    const inLim=Math.min(gross,limit), over=Math.max(0,gross-limit);
+    const own=inLim*rate + over;
+    const meal = useDay && INFO.mealFee ? INFO.mealFee*dayN : 0;
+    $('#cGross').textContent=won(gross);
+    $('#cLimit').textContent=won(limit);
+    $('#cIn').textContent=won(inLim*rate);
+    $('#cOver').textContent=won(over); $('#cOver').classList.toggle('warn',over>0);
+    $('#cMealT').textContent = useDay ? `식사 · 간식비 (${dayN}일)` : '식사 · 간식비';
+    $('#cMeal').textContent = !useDay ? '해당 없음' : meal ? won(meal) : '별도 (상담 시 안내)';
+    $('#cTotal').innerHTML = `약 ${won(own+meal)}${useDay && !meal ? ' <small>+ 식비</small>' : ''}`;
+    const notes=[];
+    const parts=[]; if(useDay) parts.push(`주간보호 월 ${dayN}일`); if(useHome) parts.push(`방문요양 월 ${homeN}회`);
+    notes.push(parts.join(' · ')+' 기준이에요.');
+    if(bonus) notes.push(`주간보호를 월 15일 이상 8시간 넘게 이용하시면 한도가 ${bonus*100}% 늘어나 반영했어요.`);
+    if(over>0) notes.push('월 한도를 넘는 부분은 공단 지원 없이 전액 본인 부담이에요. 이용 일수나 시간을 조정하면 줄일 수 있어요.');
+    msg.className='msg show'; msg.textContent=notes.join(' ');
+  }
+  setSvc('day');
+
+  // 다른 곳의 버튼으로 계산기 서비스·신청 탭 바꾸기
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[data-svc],a[data-tab]'); if(!a) return;
+    if(a.dataset.svc) setSvc(a.dataset.svc);
+    if(a.dataset.tab) setTab(a.dataset.tab);
+  });
+
+  /* ---------- 견학 예약 · 상담 신청 ---------- */
+  const tabs={visit:[$('#tVisit'),$('#fVisit')], match:[$('#tMatch'),$('#fMatch')]};
+  function setTab(k){ Object.entries(tabs).forEach(([key,[t,f]])=>{ t.setAttribute('aria-selected',key===k); f.hidden=key!==k; }); }
+  $('#tVisit').onclick=()=>setTab('visit'); $('#tMatch').onclick=()=>setTab('match');
+
+  const vt=$('#vTimes');
+  INFO.visitTimes.forEach((t,i)=>{ vt.insertAdjacentHTML('beforeend',`<label><input type="radio" name="vTime" value="${t}"${i===0?' checked':''}><span>${t}</span></label>`); });
+  const md=$('#mDays');
+  ['월','화','수','목','금','토','일'].forEach(d=>md.insertAdjacentHTML('beforeend',`<label><input type="checkbox" name="mDay" value="${d}"><span>${d}</span></label>`));
+  const tomorrow=new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+  const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  $('#vDate').min=iso(tomorrow);
+
+  const val=s=>$(s).value.trim();
+  const picked=n=>$$(`input[name="${n}"]:checked`).map(i=>i.value);
+  const telOk=v=>v.replace(/[^0-9]/g,'').length>=9;
+
+  function sendButtons(box, text){
+    const btns=box.querySelector('.send'); btns.innerHTML='';
+    box.querySelector('pre').textContent=text;
+    if(INFO.sms){
+      const a=document.createElement('a'); a.className='btn btn-a'; a.textContent='문자로 보내기';
+      a.href=`sms:${INFO.sms.replace(/[^0-9]/g,'')}?body=${encodeURIComponent(text)}`; btns.appendChild(a);
+    }
+    if(INFO.kakao){
+      const b=document.createElement('button'); b.type='button'; b.className='btn btn-k'; b.innerHTML='<svg class="ico"><use href="#i-chat"/></svg>카카오톡으로 보내기';
+      b.onclick=async()=>{
+        let ok=false; try{ await navigator.clipboard.writeText(text); ok=true; }catch(e){}
+        say(ok?'신청 내용을 복사했어요. 카카오톡 대화창에 붙여넣어 보내 주세요.':'아래 내용을 길게 눌러 복사한 뒤 카카오톡으로 보내 주세요.');
+        window.open(INFO.kakao.replace(/\/$/,'')+'/chat','_blank','noopener');
+      };
+      btns.appendChild(b);
+    }
+    if(INFO.naverBooking && box.id==='vPrev'){
+      const c=document.createElement('a'); c.className='btn btn-g'; c.textContent='네이버 예약으로 신청'; c.href=INFO.naverBooking; c.target='_blank'; c.rel='noopener'; btns.appendChild(c);
+    }
+    const t=document.createElement('a'); t.className='btn btn-l'; t.textContent='전화로 신청'; t.href='tel:'+tel; btns.appendChild(t);
+    box.classList.add('show'); box.scrollIntoView({behavior:still?'auto':'smooth',block:'nearest'});
+  }
+
+  $('#fVisit').addEventListener('submit',e=>{
+    e.preventDefault();
+    const err=$('#vErr'), d=$('#vDate').value, name=val('#vName'), ph=val('#vTel');
+    let m='';
+    if(!d) m='희망 날짜를 골라 주세요.';
+    else if(new Date(d+'T00:00').getDay()===0) m='일요일은 견학이 어려워요. 다른 날을 골라 주세요.';
+    else if(!name) m='보호자 성함을 적어 주세요.';
+    else if(!telOk(ph)) m='연락받을 번호를 정확히 적어 주세요.';
+    err.textContent=m; err.classList.toggle('show',!!m);
+    if(m){ $('#vPrev').classList.remove('show'); return; }
+    const dd=new Date(d+'T00:00'), wd='일월화수목금토'[dd.getDay()];
+    const text=[`[${INFO.name} 견학 예약 신청]`,
+      `희망 일시: ${dd.getMonth()+1}월 ${dd.getDate()}일(${wd}) ${picked('vTime')[0]||''}`,
+      `방문: ${picked('vWho')[0]}`,
+      `보호자: ${name} / ${ph}`,
+      val('#vMemo')?`문의: ${val('#vMemo')}`:'',
+      '센터에서 확인 후 연락 부탁드립니다.'].filter(Boolean).join('\n');
+    sendButtons($('#vPrev'), text);
+  });
+
+  $('#fMatch').addEventListener('submit',e=>{
+    e.preventDefault();
+    const err=$('#mErr'), area=val('#mArea'), name=val('#mName'), ph=val('#mTel');
+    let m='';
+    if(!area) m='어르신 사시는 곳을 적어 주세요.';
+    else if(!name) m='보호자 성함을 적어 주세요.';
+    else if(!telOk(ph)) m='연락받을 번호를 정확히 적어 주세요.';
+    err.textContent=m; err.classList.toggle('show',!!m);
+    if(m){ $('#mPrev').classList.remove('show'); return; }
+    const days=picked('mDay'), times=picked('mTime'), needs=picked('mNeed');
+    const text=[`[${INFO.name} 방문요양 · 요양보호사 상담 신청]`,
+      `사시는 곳: ${area}`,
+      `등급: ${$('#mGrade').value}`,
+      `희망 요일: ${days.length?days.join(', '):'협의'}`,
+      `희망 시간대: ${times.length?times.join(', '):'협의'}`,
+      needs.length?`필요한 도움: ${needs.join(', ')}`:'',
+      `선생님 성별: ${picked('mSex')[0]}`,
+      `보호자: ${name} / ${ph}`,
+      val('#mMemo')?`메모: ${val('#mMemo')}`:'',
+      '상담 연락 부탁드립니다.'].filter(Boolean).join('\n');
+    sendButtons($('#mPrev'), text);
+  });
 })();
 </script>
 </body>
