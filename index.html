@@ -151,20 +151,29 @@
   /* finder */
   .finder-box{max-width:820px;margin:0 auto;padding:36px}
   @media(max-width:520px){.finder-box{padding:24px 18px}}
-  .q{padding:18px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .q:first-of-type{border-top:0;padding-top:0}
-  .q p{font-size:17px;font-weight:600;line-height:1.5}
-  .q p small{display:block;font-size:14px;font-weight:400;color:var(--mute)}
-  .yn{display:flex;gap:8px;flex:none}
-  .yn button{min-width:76px;height:48px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:16px;font-weight:700;cursor:pointer}
-  .yn button[aria-pressed="true"]{border-color:var(--green);background:var(--green);color:#fff}
-  @media(max-width:600px){.q{flex-direction:column;align-items:stretch}.yn button{flex:1}}
+  #finderBox{scroll-margin-top:96px}
+  .fprog{display:flex;align-items:center;gap:14px;font-size:15px;font-weight:700;color:var(--mute);margin-bottom:22px}
+  .fprog .bar{flex:1;height:6px;border-radius:3px;background:var(--soft);overflow:hidden}
+  .fprog .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+  .fq h3{font-size:clamp(19px,2.4vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.45;margin-bottom:18px;outline:0}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:600px){.opts{grid-template-columns:1fr}}
+  .opts button{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;min-height:60px;padding:12px 18px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);font-size:17px;font-weight:600;line-height:1.45;cursor:pointer}
+  .opts button:hover{border-color:var(--green)}
+  .opts button small{font-size:14px;font-weight:400;color:var(--mute);margin-top:2px}
+  .opts button[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft);box-shadow:inset 0 0 0 1px var(--green);color:var(--green-d)}
+  .opts button[aria-pressed="true"] small{color:var(--ink2)}
+  .fnav{margin-top:18px;display:flex;justify-content:space-between;gap:12px}
+  .fnav button{min-height:44px;padding:0 4px;border:0;background:none;font-size:16px;font-weight:700;color:var(--ink2);cursor:pointer}
+  .fnav button[hidden]{display:none}
+  .fresult .ask{margin-top:20px;padding-top:20px;border-top:1px solid rgba(0,0,0,.08)}
+  .fresult .ask .lbl{font-weight:700;margin-bottom:10px}
   .fresult{margin-top:24px;padding:26px;border-radius:16px;background:var(--green-soft);display:none}
   .fresult.show{display:block}
   .fresult.b{background:var(--brown-soft)}
   .fresult .type{font-size:14px;font-weight:800;color:var(--green);letter-spacing:.02em}
   .fresult.b .type{color:var(--brown)}
-  .fresult h3{font-size:24px;font-weight:800;margin:4px 0 8px;letter-spacing:-.03em}
+  .fresult h3{font-size:24px;font-weight:800;margin:4px 0 8px;letter-spacing:-.03em;outline:0}
   .fresult p{font-size:16px;color:var(--ink2)}
   .fresult .btns{margin-top:18px}
   .fresult .wait{color:var(--mute)}
@@ -285,6 +294,13 @@
   .chips span{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:16px;font-weight:600;cursor:pointer}
   .chips input:checked + span{border-color:var(--green);background:var(--green);color:#fff}
   .chips input:focus-visible + span{outline:3px solid rgba(61,107,53,.35);outline-offset:2px}
+  .mstep{padding:24px 0;border-top:1px solid var(--line)}
+  .mstep:first-child{border-top:0;padding-top:0}
+  .mstep > .lbl{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;font-size:18px;font-weight:800;margin-bottom:12px}
+  .mstep > .lbl i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;font-style:normal;font-size:15px;display:grid;place-items:center}
+  .mstep > .lbl small{font-size:14px;font-weight:400;color:var(--mute)}
+  .mstep .etc{margin-top:10px}
+  .mstep .etc[hidden]{display:none}
   textarea{min-height:96px;resize:vertical;line-height:1.6}
   .err{color:#b3261e;font-size:15px;margin-top:12px;display:none}
   .err.show{display:block}
@@ -450,12 +466,10 @@
   <div class="wrap">
     <div class="head center rv"><div class="eyebrow">맞춤 돌봄 찾기</div><h2>우리 부모님께는<br>어떤 돌봄이 맞을까요?</h2><p class="lead">다섯 가지 질문에 답하시면 먼저 상담해 보실 서비스를 알려 드립니다.</p></div>
     <div class="finder-box card rv" id="finderBox">
-      <div class="q" data-q="move"><p>차를 타고 센터까지 다니실 수 있을 만큼 거동이 되시나요?<small>휠체어를 쓰셔도 차량 승하차가 가능하면 '예'</small></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
-      <div class="q" data-q="alone"><p>낮 동안 집에 혼자 계시는 시간이 길어요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
-      <div class="q" data-q="social"><p>사람들과 어울리고 활동하시는 걸 좋아하세요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
-      <div class="q" data-q="house"><p>집에서 목욕·식사 준비·청소 같은 생활 도움이 꼭 필요하세요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
-      <div class="q" data-q="extra"><p>낮 시간 말고도 저녁이나 주말에 돌봄 손길이 필요해요.</p><div class="yn"><button type="button" data-v="1" aria-pressed="false">예</button><button type="button" data-v="0" aria-pressed="false">아니요</button></div></div>
+      <div class="fprog"><span id="fStep">질문 1 / 5</span><div class="bar"><i id="fBar"></i></div></div>
+      <div id="fQs"></div>
       <div class="fresult" id="fresult" aria-live="polite"></div>
+      <div class="fnav"><button type="button" id="fBack" hidden>← 이전 질문</button><button type="button" id="fRestart" hidden>처음부터 다시</button></div>
     </div>
   </div>
 </section>
@@ -628,16 +642,41 @@
     </form>
 
     <form class="aform card rv" id="fMatch" role="tabpanel" aria-labelledby="tMatch" hidden novalidate>
-      <div class="two">
-        <div class="field"><label for="mArea">어르신 사시는 곳</label><input type="text" id="mArea" placeholder="예) 화순읍 ○○리" required></div>
-        <div class="field"><label for="mGrade">장기요양 등급</label>
-          <select id="mGrade"><option>1등급</option><option>2등급</option><option selected>3등급</option><option>4등급</option><option>5등급</option><option>등급 신청 전</option></select>
+      <div class="mstep"><p class="lbl"><i>1</i>거동 상태 <small>하나만 골라 주세요</small></p>
+        <div class="chips" data-chips="mMove" data-type="radio">혼자 이동|보행기·지팡이|부축 필요|휠체어|대부분 누워서 생활</div>
+      </div>
+      <div class="mstep"><p class="lbl"><i>2</i>인지 상태 <small>여러 개 고를 수 있어요</small></p>
+        <div class="chips" data-chips="mMind">기억력 저하|같은 말 반복|시간·장소 혼동|길 잃을 위험|의사소통 어려움|*특별한 어려움 없음|*잘 모르겠음</div>
+      </div>
+      <div class="mstep"><p class="lbl"><i>3</i>일상생활 도움 <small>여러 개 고를 수 있어요</small></p>
+        <div class="chips" data-chips="mHelp">식사 준비|식사하기|목욕·세면|옷 갈아입기|화장실 이용|실내 이동|약 복용 도움|*특별히 어려운 점 없음</div>
+      </div>
+      <div class="mstep"><p class="lbl"><i>4</i>특별 주의사항 <small>여러 개 고를 수 있어요</small></p>
+        <div class="chips" data-chips="mCare">낙상 위험|혼자 있을 때 불안|낯선 사람 경계|감정 변화|대화·정서 지원 필요|*특별한 사항 없음|기타</div>
+        <input type="text" class="etc" id="mCareEtc" placeholder="기타 주의사항을 적어 주세요" aria-label="기타 주의사항" hidden>
+      </div>
+      <div class="mstep"><p class="lbl"><i>5</i>요양보호사 선호사항 <small>여러 개 고를 수 있어요</small></p>
+        <div class="chips" data-chips="mPref">차분하고 친절한 분|밝고 대화를 잘 나누는 분|치매 돌봄 경험|거동 불편 어르신 돌봄 경험|식사 준비에 능숙한 분|*특별한 선호 없음|기타</div>
+        <input type="text" class="etc" id="mPrefEtc" placeholder="기타 선호사항을 적어 주세요" aria-label="기타 선호사항" hidden>
+        <div class="field" style="margin-top:16px"><span class="lbl" style="font-size:15px">선생님 성별</span>
+          <div class="chips">
+            <label><input type="radio" name="mSex" value="상관없음" checked><span>상관없음</span></label>
+            <label><input type="radio" name="mSex" value="여성"><span>여성</span></label>
+            <label><input type="radio" name="mSex" value="남성"><span>남성</span></label>
+          </div>
         </div>
       </div>
-      <div class="field"><span class="lbl">원하시는 요일</span>
+      <div class="mstep"><p class="lbl"><i>6</i>기본 신청정보</p>
+      <div class="two">
+        <div class="field"><label for="mGrade">장기요양 등급</label>
+          <select id="mGrade"><option>1등급</option><option>2등급</option><option selected>3등급</option><option>4등급</option><option>5등급</option><option>등급 신청 전</option><option>잘 모르겠음</option></select>
+        </div>
+        <div class="field"><label for="mArea">거주 지역</label><input type="text" id="mArea" placeholder="예) 화순읍 ○○리" required></div>
+      </div>
+      <div class="field"><span class="lbl">희망 요일</span>
         <div class="chips" id="mDays"></div>
       </div>
-      <div class="field"><span class="lbl">원하시는 시간대</span>
+      <div class="field"><span class="lbl">희망 시간</span>
         <div class="chips">
           <label><input type="checkbox" name="mTime" value="오전"><span>오전</span></label>
           <label><input type="checkbox" name="mTime" value="오후"><span>오후</span></label>
@@ -645,34 +684,18 @@
           <label><input type="checkbox" name="mTime" value="시간 협의"><span>협의 가능</span></label>
         </div>
       </div>
-      <div class="field"><span class="lbl">필요한 도움 · 원하는 경험</span>
-        <div class="chips">
-          <label><input type="checkbox" name="mNeed" value="치매 어르신 돌봄 경험"><span>치매 돌봄 경험</span></label>
-          <label><input type="checkbox" name="mNeed" value="거동이 어려운 분 돌봄 경험"><span>거동 불편 돌봄</span></label>
-          <label><input type="checkbox" name="mNeed" value="목욕 도움"><span>목욕 도움</span></label>
-          <label><input type="checkbox" name="mNeed" value="식사 준비"><span>식사 준비</span></label>
-          <label><input type="checkbox" name="mNeed" value="병원 동행"><span>병원 동행</span></label>
-          <label><input type="checkbox" name="mNeed" value="말벗 · 산책"><span>말벗 · 산책</span></label>
-        </div>
-      </div>
-      <div class="field"><span class="lbl">선생님 성별</span>
-        <div class="chips">
-          <label><input type="radio" name="mSex" value="상관없음" checked><span>상관없음</span></label>
-          <label><input type="radio" name="mSex" value="여성"><span>여성</span></label>
-          <label><input type="radio" name="mSex" value="남성"><span>남성</span></label>
-        </div>
-      </div>
       <div class="two">
         <div class="field"><label for="mName">보호자 성함</label><input type="text" id="mName" autocomplete="name" required></div>
         <div class="field"><label for="mTel">연락받을 번호</label><input type="tel" id="mTel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required></div>
       </div>
       <div class="field"><label for="mMemo">더 알려 주실 내용 <span style="font-weight:400;color:var(--mute)">(선택)</span></label><textarea id="mMemo" placeholder="예) 주 3회 오후 3시간 정도 생각하고 있어요."></textarea></div>
+      </div>
       <p class="note" style="margin-top:0">상담 후 지역 · 일정 · 인력 상황에 따라 적합한 선생님을 안내해 드립니다. 원하시는 조건이 모두 맞지 않을 수 있습니다.</p>
       <p class="err" id="mErr"></p>
       <div class="btns" style="margin-top:18px"><button class="btn btn-a" type="submit">신청 내용 만들기</button></div>
       <div class="preview" id="mPrev"><pre></pre><div class="btns send"></div></div>
     </form>
-    <p class="privacy rv">입력하신 내용은 홈페이지에 저장되지 않습니다. 직접 문자나 카카오톡으로 센터에 보내시는 방식이며, 상담과 일정 안내에만 사용합니다. 어르신 건강 상태 같은 자세한 내용은 통화로 말씀해 주세요.</p>
+    <p class="privacy rv">입력하신 내용은 홈페이지에 저장되지 않습니다. 직접 문자나 카카오톡으로 센터에 보내시는 방식이며, 상담과 일정 · 선생님 안내에만 사용합니다. 병명 같은 자세한 건강 상태는 통화로 말씀해 주세요.</p>
   </div>
 </section>
 
@@ -826,31 +849,91 @@ const FEE = {
   function say(t){ toast.textContent=t; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),4200); }
 
   /* ---------- 맞춤 돌봄 찾기 ---------- */
-  const ans={};
-  const fres=$('#fresult');
-  $$('#finderBox .q').forEach(q=>{
-    q.querySelectorAll('button').forEach(b=>b.onclick=()=>{
-      q.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed', x===b));
-      ans[q.dataset.q]=b.dataset.v==='1'; showFinder();
+  // 보기: [문구, 주간보호 점수, 방문요양 점수, 부연 설명]
+  const FQ=[
+    {k:'이동', q:'부모님은 외출하거나 이동하실 때 어떤 도움이 필요한가요?', o:[
+      ['혼자 이동할 수 있어요',2,0],['지팡이나 보행기를 사용하세요',2,0],['다른 사람의 부축이 필요해요',1,1],
+      ['휠체어를 사용하세요',1,1],['외출이 매우 어렵거나 대부분 누워 계세요',0,4],['잘 모르겠어요',0,0]]},
+    {k:'낮 생활', q:'낮 동안 부모님은 주로 어떻게 지내시나요?', o:[
+      ['하루 대부분을 혼자 계세요',2,0],['몇 시간 정도 혼자 계세요',0,1],['대부분 가족과 함께 지내세요',0,0],
+      ['가족 외에 돌봄을 제공하는 분이 계세요',0,0],['날마다 상황이 달라요',1,1]]},
+    {k:'필요한 돌봄', q:'부모님께 가장 필요한 돌봄은 무엇인가요?', o:[
+      ['안전 및 건강상태 확인',1,1,'낙상 예방, 건강 상태 관찰, 안전한 생활 지원'],
+      ['신체활동 및 기능 유지',2,0,'걷기, 가벼운 운동, 신체기능 유지 활동'],
+      ['인지활동 및 치매 예방',2,0,'기억력·집중력 활동, 인지 자극 프로그램'],
+      ['일상생활 도움',0,2,'식사, 목욕, 옷 갈아입기, 화장실 이용'],
+      ['사회적 교류 및 정서 지원',2,0,'말벗, 여가활동, 다른 사람들과의 교류'],
+      ['가족의 돌봄 부담 경감',1,0,'보호자가 없는 시간의 돌봄, 돌봄 공백 해소'],
+      ['잘 모르겠어요',0,0]]},
+    {k:'낯선 환경', q:'부모님은 새로운 장소나 사람을 만날 때 어떤 반응을 보이시나요?', o:[
+      ['사람들과 이야기하거나 함께 활동하는 것을 좋아하세요',2,0],['집에서 조용히 지내는 것을 더 좋아하세요',0,2],
+      ['처음에는 낯설어하지만 시간이 지나면 적응하세요',1,0],['낯선 장소나 사람을 많이 불편해하세요',0,2],
+      ['그날의 기분이나 상황에 따라 달라요',0,0],['잘 모르겠어요',0,0]]},
+    {k:'필요한 때', q:'주로 언제 도움이 필요하신가요?', o:[
+      ['평일 낮 동안 지속적인 돌봄',2,0],['평일 특정 시간에만 도움',0,2],['주말 또는 공휴일',0,2],
+      ['여러 시간대에 도움 필요',1,1],['아직 정하지 못했어요',0,0]]},
+  ];
+  const ans=[];   // 질문별 고른 보기 번호
+  let fcur=0;
+  const fres=$('#fresult'), fqs=$('#fQs');
+  function showQ(i, focus){
+    fcur=i; fres.className='fresult'; fres.innerHTML=''; fqs.hidden=false;
+    const Q=FQ[i];
+    fqs.innerHTML=`<div class="fq"><h3 tabindex="-1">${Q.q}</h3><div class="opts">${Q.o.map((o,j)=>
+      `<button type="button" data-j="${j}" aria-pressed="${ans[i]===j}">${o[0]}${o[3]?`<small>${o[3]}</small>`:''}</button>`).join('')}</div></div>`;
+    $('#fStep').textContent=`질문 ${i+1} / ${FQ.length}`;
+    $('#fBar').style.width=(i/FQ.length*100)+'%';
+    $('#fBack').hidden=i===0; $('#fRestart').hidden=true;
+    fqs.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+      ans[i]=+b.dataset.j;
+      fqs.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed', x===b));
+      setTimeout(()=> i<FQ.length-1 ? showQ(i+1,true) : showFinder(), still?0:220);
     });
-  });
+    if(focus) moveFinder(fqs.querySelector('h3'));
+  }
+  function moveFinder(el){
+    const box=$('#finderBox');
+    if(box.getBoundingClientRect().top<70) box.scrollIntoView({behavior:still?'auto':'smooth'});
+    el.focus({preventScroll:true});
+  }
+  $('#fBack').onclick=()=>showQ(fcur===FQ.length? FQ.length-1 : Math.max(0,fcur-1), true);
+  $('#fRestart').onclick=()=>{ ans.length=0; showQ(0,true); };
   function showFinder(){
-    const n=Object.keys(ans).length;
-    fres.className='fresult show';
-    if(n<5){ fres.innerHTML=`<p class="wait">${5-n}개 질문이 남았어요.</p>`; return; }
-    let type;
-    if(!ans.move) type='B';
-    else if(ans.extra || ans.house) type='C';
-    else if(ans.alone || ans.social) type='A';
-    else type='C';
+    fcur=FQ.length; fqs.hidden=true;
+    $('#fStep').textContent='추천 결과'; $('#fBar').style.width='100%';
+    $('#fBack').hidden=false; $('#fRestart').hidden=false;
+    let D=0, H=0;
+    FQ.forEach((Q,i)=>{ const o=Q.o[ans[i]]; D+=o[1]; H+=o[2]; });
+    // 대부분 누워 계시면 방문요양, 점수 차가 3점 이상이면 그쪽, 아니면 비교 상담
+    const type = ans[0]===4 ? 'B' : D-H>=3 ? 'A' : H-D>=3 ? 'B' : 'C';
     const R={
-      A:{cls:'', t:'유형 A', h:'주간보호를 먼저 추천드려요', p:'낮 동안 센터에서 친구들과 활동하고 식사하시는 생활이 잘 맞으실 것 같아요. 송영 차량으로 집 앞에서 모시니, 먼저 센터를 둘러보세요.', a:`<a class="btn btn-a btn-sm" href="#apply" data-tab="visit">센터 견학 예약</a><a class="btn btn-l btn-sm" href="#day">센터의 하루 보기</a>`},
-      B:{cls:'b', t:'유형 B', h:'방문요양을 먼저 추천드려요', p:'센터까지 다니시기 어렵다면 요양보호사 선생님이 댁으로 찾아가는 방문요양이 편하실 거예요. 원하시는 조건을 남겨 주시면 맞는 선생님을 안내해 드립니다.', a:`<a class="btn btn-a btn-sm" href="#apply" data-tab="match">선생님 조건 남기기</a><a class="btn btn-l btn-sm" data-tel href="tel:${tel}">전화 상담</a>`},
-      C:{cls:'', t:'유형 C', h:'두 서비스를 함께 상담해 보세요', p:'센터 활동도 도움이 되시고, 댁에서의 생활 도움도 필요해 보여요. 평일 낮엔 주간보호, 그 밖의 시간엔 방문요양처럼 함께 쓰는 방법을 상담해 드립니다.', a:`<a class="btn btn-a btn-sm" data-tel href="tel:${tel}">전화 상담</a><a class="btn btn-l btn-sm" href="#calc" data-svc="both">함께 쓰면 비용은?</a>`},
+      A:{cls:'', t:'주간보호 우선 상담', h:'주간보호를 먼저 상담해 보세요', p:'낮 시간 돌봄과 신체·인지활동, 다른 어르신들과의 교류가 중요해 보여요. 송영 차량으로 댁 앞에서 모셔 오고 모셔다 드립니다.', a:`<a class="btn btn-l btn-sm" href="#apply" data-tab="visit">센터 견학 예약</a><a class="btn btn-l btn-sm" href="#day">센터의 하루 보기</a>`},
+      B:{cls:'b', t:'방문요양 우선 상담', h:'방문요양을 먼저 상담해 보세요', p:'댁에서 받는 일상생활 도움이나 정해진 시간의 개별 돌봄이 중요해 보여요. 요양보호사 선생님이 댁으로 찾아가 돕습니다.', a:`<a class="btn btn-l btn-sm" href="#apply" data-tab="match" data-move="${ans[0]}">요양보호사 조건 남기기</a>`},
+      C:{cls:'', t:'두 서비스 비교 상담', h:'두 서비스를 비교해서 상담해 보세요', p:'필요하신 돌봄이 여러 가지라 한쪽으로 정하기 어려워요. 평일 낮엔 주간보호, 그 밖의 시간엔 방문요양처럼 함께 쓰는 방법까지 비교해 드립니다.', a:`<a class="btn btn-l btn-sm" href="#calc" data-svc="both">함께 쓰면 비용은?</a>`},
     }[type];
     fres.className='fresult show '+R.cls;
-    fres.innerHTML=`<div class="type">${R.t}</div><h3>${R.h}</h3><p>${R.p}</p><div class="btns">${R.a}</div><p class="note">간단한 참고용 안내예요. 상담에서 어르신 상태를 듣고 정확히 안내해 드립니다.</p>`;
+    fres.innerHTML=`<div class="type">추천 · ${R.t}</div><h3 tabindex="-1">${R.h}</h3><p>${R.p}</p><div class="btns">${R.a}</div>
+      <div class="ask"><p class="lbl">${R.t}을 신청하시겠어요?</p>
+        <div class="two"><div class="field"><label for="fName">보호자 성함</label><input type="text" id="fName" autocomplete="name"></div>
+        <div class="field"><label for="fTel">연락받을 번호</label><input type="tel" id="fTel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000"></div></div>
+        <p class="err" id="fErr"></p>
+        <div class="btns"><button class="btn btn-a" type="button" id="fAsk">${R.t} 신청</button></div>
+        <div class="preview" id="fPrev"><pre></pre><div class="btns send"></div></div>
+      </div>
+      <p class="note">간단한 참고용 안내예요. 상담에서 어르신 상태를 듣고 정확히 안내해 드립니다.</p>`;
+    $('#fAsk').onclick=()=>{
+      const name=val('#fName'), ph=val('#fTel'), err=$('#fErr');
+      const m=!name?'보호자 성함을 적어 주세요.':!telOk(ph)?'연락받을 번호를 정확히 적어 주세요.':'';
+      err.textContent=m; err.classList.toggle('show',!!m);
+      if(m){ $('#fPrev').classList.remove('show'); return; }
+      const text=[`[${INFO.name} ${R.t} 신청]`, '맞춤 돌봄 찾기에서 답한 내용',
+        ...FQ.map((Q,i)=>`· ${Q.k}: ${Q.o[ans[i]][0]}`),
+        `보호자: ${name} / ${ph}`, '상담 연락 부탁드립니다.'].join('\n');
+      sendButtons($('#fPrev'), text);
+    };
+    moveFinder(fres.querySelector('h3'));
   }
+  showQ(0);
 
   /* ---------- 이용료 계산기 ---------- */
   $('#feeYear').textContent=FEE.year;
@@ -915,6 +998,9 @@ const FEE = {
     const a=e.target.closest('a[data-svc],a[data-tab]'); if(!a) return;
     if(a.dataset.svc) setSvc(a.dataset.svc);
     if(a.dataset.tab) setTab(a.dataset.tab);
+    // 맞춤 찾기에서 고른 이동 상태를 매칭 양식에 미리 채움
+    const mv=$$('input[name="mMove"]')[+a.dataset.move];
+    if(a.dataset.move && mv) mv.checked=true;
   });
 
   /* ---------- 견학 예약 · 상담 신청 ---------- */
@@ -924,6 +1010,20 @@ const FEE = {
 
   const vt=$('#vTimes');
   INFO.visitTimes.forEach((t,i)=>{ vt.insertAdjacentHTML('beforeend',`<label><input type="radio" name="vTime" value="${t}"${i===0?' checked':''}><span>${t}</span></label>`); });
+  // 매칭 양식 보기 만들기: "|"로 나누고, "*"가 붙은 보기(없음·모르겠음)는 다른 보기와 같이 고를 수 없음
+  $$('#fMatch [data-chips]').forEach(box=>{
+    const n=box.dataset.chips, type=box.dataset.type||'checkbox';
+    box.innerHTML=box.textContent.split('|').map(s=>{ const x=s[0]==='*', v=x?s.slice(1):s;
+      return `<label><input type="${type}" name="${n}" value="${v}"${x?' data-x':''}><span>${v}</span></label>`; }).join('');
+    box.addEventListener('change',e=>{
+      const t=e.target; if(type!=='checkbox' || !t.checked) return;
+      box.querySelectorAll('input').forEach(i=>{ if(i!==t && (t.hasAttribute('data-x') || i.hasAttribute('data-x'))) i.checked=false; });
+    });
+    box.addEventListener('change',()=>{
+      const etc=box.nextElementSibling;
+      if(etc && etc.classList.contains('etc')) etc.hidden=!box.querySelector('input[value="기타"]:checked');
+    });
+  });
   const md=$('#mDays');
   ['월','화','수','목','금','토','일'].forEach(d=>md.insertAdjacentHTML('beforeend',`<label><input type="checkbox" name="mDay" value="${d}"><span>${d}</span></label>`));
   const tomorrow=new Date(); tomorrow.setDate(tomorrow.getDate()+1);
@@ -981,19 +1081,23 @@ const FEE = {
     e.preventDefault();
     const err=$('#mErr'), area=val('#mArea'), name=val('#mName'), ph=val('#mTel');
     let m='';
-    if(!area) m='어르신 사시는 곳을 적어 주세요.';
+    if(!picked('mMove').length) m='1번 거동 상태를 골라 주세요.';
+    else if(!area) m='거주 지역을 적어 주세요.';
     else if(!name) m='보호자 성함을 적어 주세요.';
     else if(!telOk(ph)) m='연락받을 번호를 정확히 적어 주세요.';
     err.textContent=m; err.classList.toggle('show',!!m);
     if(m){ $('#mPrev').classList.remove('show'); return; }
-    const days=picked('mDay'), times=picked('mTime'), needs=picked('mNeed');
+    // 고른 보기를 한 줄로, "기타"는 적은 내용으로 바꿈
+    const list=(n,etc)=>{ const v=picked(n).map(x=>x==='기타' && etc && val(etc) ? `기타(${val(etc)})` : x); return v.length?v.join(', '):'선택 안 함'; };
+    const days=picked('mDay'), times=picked('mTime');
     const text=[`[${INFO.name} 방문요양 · 요양보호사 상담 신청]`,
-      `사시는 곳: ${area}`,
-      `등급: ${$('#mGrade').value}`,
-      `희망 요일: ${days.length?days.join(', '):'협의'}`,
-      `희망 시간대: ${times.length?times.join(', '):'협의'}`,
-      needs.length?`필요한 도움: ${needs.join(', ')}`:'',
-      `선생님 성별: ${picked('mSex')[0]}`,
+      `1. 거동 상태: ${picked('mMove')[0]}`,
+      `2. 인지 상태: ${list('mMind')}`,
+      `3. 일상생활 도움: ${list('mHelp')}`,
+      `4. 특별 주의사항: ${list('mCare','#mCareEtc')}`,
+      `5. 선생님 선호: ${list('mPref','#mPrefEtc')} / 성별 ${picked('mSex')[0]}`,
+      `6. 등급: ${$('#mGrade').value} / 거주 지역: ${area}`,
+      `   희망 요일: ${days.length?days.join(', '):'협의'} / 희망 시간: ${times.length?times.join(', '):'협의'}`,
       `보호자: ${name} / ${ph}`,
       val('#mMemo')?`메모: ${val('#mMemo')}`:'',
       '상담 연락 부탁드립니다.'].filter(Boolean).join('\n');
