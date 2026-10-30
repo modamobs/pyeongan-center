@@ -1037,26 +1037,46 @@ const FEE = {
   const picked=n=>$$(`input[name="${n}"]:checked`).map(i=>i.value);
   const telOk=v=>v.replace(/[^0-9]/g,'').length>=9;
 
+  // 휴대폰(터치 화면)인지, 아이폰인지 — 문자 버튼과 문자 링크 형식에 씀
+  const isPhone=matchMedia('(pointer: coarse)').matches;
+  const isIOS=/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+  async function copyText(text, pre){
+    try{ await navigator.clipboard.writeText(text); return true; }catch(e){}
+    // 클립보드 API가 막힌 브라우저: 화면의 신청 내용을 선택해서 복사
+    try{ const r=document.createRange(); r.selectNodeContents(pre); const s=getSelection(); s.removeAllRanges(); s.addRange(r); const ok=document.execCommand('copy'); s.removeAllRanges(); return ok; }catch(e){ return false; }
+  }
   function sendButtons(box, text){
     const btns=box.querySelector('.send'); btns.innerHTML='';
-    box.querySelector('pre').textContent=text;
-    if(INFO.sms){
+    const pre=box.querySelector('pre'); pre.textContent=text;
+    if(INFO.sms && isPhone){
       const a=document.createElement('a'); a.className='btn btn-a'; a.textContent='문자로 보내기';
-      a.href=`sms:${INFO.sms.replace(/[^0-9]/g,'')}?body=${encodeURIComponent(text)}`; btns.appendChild(a);
+      a.href=`sms:${INFO.sms.replace(/[^0-9]/g,'')}${isIOS?'&':'?'}body=${encodeURIComponent(text)}`; btns.appendChild(a);
     }
     if(INFO.kakao){
       const b=document.createElement('button'); b.type='button'; b.className='btn btn-k'; b.innerHTML='<svg class="ico"><use href="#i-chat"/></svg>카카오톡으로 보내기';
       b.onclick=async()=>{
-        let ok=false; try{ await navigator.clipboard.writeText(text); ok=true; }catch(e){}
-        say(ok?'신청 내용을 복사했어요. 카카오톡 대화창에 붙여넣어 보내 주세요.':'아래 내용을 길게 눌러 복사한 뒤 카카오톡으로 보내 주세요.');
+        const ok=await copyText(text, pre);
+        say(ok?'신청 내용을 복사했어요. 카카오톡 대화창에 붙여넣어 보내 주세요.':'위 내용을 길게 눌러 복사한 뒤 카카오톡으로 보내 주세요.');
         window.open(INFO.kakao.replace(/\/$/,'')+'/chat','_blank','noopener');
       };
       btns.appendChild(b);
     }
+    const cp=document.createElement('button'); cp.type='button'; cp.className='btn btn-l'; cp.textContent='신청 내용 복사';
+    cp.onclick=async()=>{
+      const ok=await copyText(text, pre);
+      say(ok?'신청 내용을 복사했어요. 문자나 카카오톡에 붙여넣어 보내 주세요.':'복사가 안 됐어요. 위 내용을 길게 눌러 복사해 주세요.');
+      if(ok){ cp.textContent='복사했어요 ✓'; setTimeout(()=>cp.textContent='신청 내용 복사',2500); }
+    };
+    btns.appendChild(cp);
     if(INFO.naverBooking && box.id==='vPrev'){
       const c=document.createElement('a'); c.className='btn btn-g'; c.textContent='네이버 예약으로 신청'; c.href=INFO.naverBooking; c.target='_blank'; c.rel='noopener'; btns.appendChild(c);
     }
-    const t=document.createElement('a'); t.className='btn btn-l'; t.textContent='전화로 신청'; t.href='tel:'+tel; btns.appendChild(t);
+    // PC에서는 전화를 못 거니 번호를 보여 줌
+    const t=document.createElement('a'); t.className='btn btn-l'; t.textContent=isPhone?'전화로 신청':`전화 ${INFO.phone}`; t.href='tel:'+tel; btns.appendChild(t);
+    if(!isPhone && INFO.sms){
+      const n=document.createElement('p'); n.className='note'; n.style.width='100%';
+      n.textContent=`휴대폰 문자로 보내시려면 '신청 내용 복사' 후 ${INFO.sms} 로 붙여넣어 보내 주세요.`; btns.appendChild(n);
+    }
     box.classList.add('show'); box.scrollIntoView({behavior:still?'auto':'smooth',block:'nearest'});
   }
 
