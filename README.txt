@@ -20,4 +20,5 @@
    - 주소: https://pyeongan-care.kr (가비아, 2027-10-30 만료 — 만료 전에 연장하세요)
      가비아 DNS: A @ → 185.199.108.153 / 109.153 / 110.153 / 111.153, CNAME www → modamobs.github.io.
      CNAME 파일은 지우지 마세요(지우면 도메인 연결이 끊깁니다).
-5. 올린 뒤 네이버 서치어드바이저(searchadvisor.naver.com)에 사이트를 등록하면 네이버 검색에 잡힙니다.
+5. 네이버 서치어드바이저(searchadvisor.naver.com)에 등록되어 있습니다(2026-10-30 소유 확인).
+   navera7ff2f2db054c4ba8fc9acdebd86679e.html 파일, index.html 의 naver-site-verification 태그, robots.txt, sitemap.xml 은 지우지 마세요.
