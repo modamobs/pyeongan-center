@@ -17,5 +17,7 @@
 3. 지도: <a class="map" id="mapbox"> 에 카카오맵 정적 지도(키 필요 없음)와 핀이 들어가 있고, 누르면 카카오맵 장소 페이지가 열립니다.
    이사하면 카카오맵에서 새 장소를 찾아 img 의 MX·MY 좌표와 링크의 장소 번호를 바꿉니다. "네이버 지도" 버튼은 INFO.naverMap 링크로 열립니다.
 4. 올리기: GitHub Pages(무료) 또는 어떤 정적 호스팅이든 index.html 과 img/ 폴더만 올리면 됩니다.
-   - 도메인을 살 경우 pyeongan-daycare.kr 처럼 짧은 것을 권합니다.
+   - 주소: https://pyeongan-care.kr (가비아, 2027-10-30 만료 — 만료 전에 연장하세요)
+     가비아 DNS: A @ → 185.199.108.153 / 109.153 / 110.153 / 111.153, CNAME www → modamobs.github.io.
+     CNAME 파일은 지우지 마세요(지우면 도메인 연결이 끊깁니다).
 5. 올린 뒤 네이버 서치어드바이저(searchadvisor.naver.com)에 사이트를 등록하면 네이버 검색에 잡힙니다.
