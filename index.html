@@ -68,7 +68,17 @@
   .menu a:hover{color:var(--brown)}
   .call{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 18px;border-radius:12px;background:var(--brown);color:#fff;font-size:16px;font-weight:700;white-space:nowrap}
   .call:hover{background:var(--brown-d)}
-  @media(max-width:1060px){.menu{display:none}}
+  .menu a.on{color:var(--brown)}
+  .quick{display:none}
+  @media(max-width:1060px){
+    .menu{display:none}
+    html{scroll-padding-top:128px}
+    .quick{display:flex;gap:8px;overflow-x:auto;padding:0 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+    .quick::-webkit-scrollbar{display:none}
+    .quick a{flex:none;scroll-snap-align:start;display:inline-flex;align-items:center;height:42px;padding:0 16px;border-radius:999px;background:var(--soft);font-size:15px;font-weight:700;color:var(--ink2);white-space:nowrap}
+    .quick a.on{background:var(--brown);color:#fff}
+  }
+  @media(max-width:520px){.nav{height:64px}html{scroll-padding-top:120px}}
   @media(max-width:520px){.brand{font-size:17px}.brand svg{width:24px;height:24px}.call{height:40px;padding:0 12px;font-size:14px}.call .ico{width:16px;height:16px}}
 
   /* hero */
@@ -198,7 +208,8 @@
   }
 
   /* program */
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:1100px){.pgrid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
   .pcard{overflow:hidden;display:flex;flex-direction:column}
@@ -207,7 +218,7 @@
   .pcard:nth-child(even) .pimg{color:var(--brown)}
   .pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .pimg.empty{background:radial-gradient(circle at 50% 50%,var(--paper) 0 34px,transparent 35px),var(--soft)}
-  .pbody{padding:22px 24px 26px}
+  .pbody{padding:20px 22px 24px}
   .pbody h3{font-size:20px;font-weight:800;color:var(--brown-d);margin-bottom:6px}
   .pbody p{font-size:15px;color:var(--ink2)}
 
@@ -243,6 +254,11 @@
   select:focus,input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid rgba(154,74,31,.35);outline-offset:2px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media(max-width:520px){.two{grid-template-columns:1fr}}
+  .stepper{display:flex;align-items:center;gap:8px}
+  .stepper button{flex:none;width:52px;height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-size:24px;font-weight:600;line-height:1;cursor:pointer}
+  .stepper input{width:96px;text-align:center;font-size:20px;font-weight:700;-moz-appearance:textfield}
+  .stepper input::-webkit-inner-spin-button,.stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+  .stepper span{font-size:17px;color:var(--ink2);margin-right:4px}
   .sub-block{padding:20px;border-radius:14px;background:var(--bg);margin-bottom:22px}
   .sub-block h4{margin:0 0 12px;font-size:16px;color:var(--green-d)}
   .sub-block .field{margin-bottom:14px}
@@ -340,6 +356,8 @@
   <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></symbol>
   <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h13v5a6 6 0 0 1-13 0z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>
   <symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 21c-4 0-8-3-8-7V9a1.5 1.5 0 0 1 3 0v3"/><path d="M7 12V6a1.5 1.5 0 0 1 3 0v5M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V6a1.5 1.5 0 0 1 3 0v6c1-1.5 2.5-2 3.5-1.5-1 3-2.5 6.5-7.5 6.5"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2M13 8.5h.01M16 7h.01M15 10h.01"/></symbol>
+  <symbol id="i-hosp" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></symbol>
   <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 4C7 4 3 7.1 3 11c0 2.4 1.5 4.5 3.9 5.8L6 20l4-2.2c.6.1 1.3.2 2 .2 5 0 9-3.1 9-7s-4-7-9-7z"/></symbol>
 </svg>
@@ -352,6 +370,9 @@
     </nav>
     <a class="call" data-tel href="#contact"><svg class="ico"><use href="#i-phone"/></svg><span data-i="phone">[전화번호]</span></a>
   </div>
+  <nav class="quick" aria-label="빠른 이동">
+    <a href="#service">돌봄 서비스</a><a href="#finder">맞춤 찾기</a><a href="#day">하루 일과</a><a href="#program">프로그램</a><a href="#guide">이용 안내</a><a href="#calc">비용 계산</a><a href="#apply">견학 예약</a><a href="#contact">오시는 길</a>
+  </nav>
 </header>
 
 <main>
@@ -485,6 +506,8 @@
       <div class="pcard card"><div class="pimg" data-src="img/p4.jpg"><svg class="ico"><use href="#i-bowl"/></svg></div><div class="pbody"><h3>식사 · 영양</h3><p data-i="meal">[식사 제공 방식]</p></div></div>
       <div class="pcard card"><div class="pimg" data-src="img/p5.jpg"><svg class="ico"><use href="#i-bus"/></svg></div><div class="pbody"><h3>송영 서비스</h3><p>차량 <span data-i="vans">[N]</span>대로 집 앞까지 안전하게 모십니다. 승하차 때 직원이 함께합니다.</p></div></div>
       <div class="pcard card"><div class="pimg" data-src="img/p6.jpg"><svg class="ico"><use href="#i-steth"/></svg></div><div class="pbody"><h3>건강 관리</h3><p>매일 혈압·체온 확인, 복약 도움. 변화가 있으면 보호자께 바로 연락드립니다. <span data-i="health">[간호 인력]</span></p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p7.jpg"><svg class="ico"><use href="#i-bath"/></svg></div><div class="pbody"><h3>목욕 서비스</h3><p>혼자 씻기 어려우신 어르신을 직원이 안전하게 도와드립니다. 댁에서 목욕시켜 드리기 힘든 보호자의 부담을 덜어 드립니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p8.jpg"><svg class="ico"><use href="#i-hosp"/></svg></div><div class="pbody"><h3>병원 동행</h3><p>보호자 일정이 맞지 않으실 때 직원이 병원 진료에 함께 다녀옵니다. 진료 내용은 보호자께 전해 드립니다.</p></div></div>
     </div>
   </div>
 </section>
@@ -537,6 +560,9 @@
               <select id="cDayN"><option value="1">1일</option><option value="2">2일</option><option value="3">3일</option><option value="4">4일</option><option value="5" selected>5일</option><option value="6">6일</option></select>
             </div>
           </div>
+          <div class="field"><label for="cDayM">한 달 이용 일수</label>
+            <div class="stepper"><button type="button" data-step="-1" aria-label="하루 줄이기">−</button><input type="number" id="cDayM" min="1" max="31" inputmode="numeric"><span>일</span><button type="button" data-step="1" aria-label="하루 늘리기">+</button></div>
+          </div>
         </div>
         <div class="sub-block" id="cHomeBlock" hidden>
           <h4>방문요양</h4>
@@ -548,8 +574,11 @@
               <select id="cHomeN"><option value="1">1회</option><option value="2">2회</option><option value="3">3회</option><option value="4">4회</option><option value="5" selected>5회</option><option value="6">6회</option><option value="7">7회</option></select>
             </div>
           </div>
+          <div class="field"><label for="cHomeMN">한 달 방문 횟수</label>
+            <div class="stepper"><button type="button" data-step="-1" aria-label="한 번 줄이기">−</button><input type="number" id="cHomeMN" min="1" max="62" inputmode="numeric"><span>회</span><button type="button" data-step="1" aria-label="한 번 늘리기">+</button></div>
+          </div>
         </div>
-        <p class="note" style="margin-top:0">한 달은 일주일 × 4.3주로 계산합니다.</p>
+        <p class="note" style="margin-top:0">일주일 횟수를 고르면 한 달(4.3주)로 자동 계산되고, 한 달 횟수는 직접 고치실 수 있습니다.</p>
       </div>
       <div class="cout card" aria-live="polite">
         <div style="font-size:16px;font-weight:700;color:var(--ink2)">예상 월 본인부담금</div>
@@ -574,7 +603,7 @@
     <div class="head rv"><div class="eyebrow">견학 예약 · 상담 신청</div><h2>원하시는 날을 고르시면<br>센터에서 확인 후 연락드립니다</h2><p class="lead">신청만으로 예약이 확정되지는 않습니다. 담당자가 일정을 확인해 연락드리면 확정됩니다.</p></div>
     <div class="tabs rv" role="tablist">
       <button type="button" role="tab" aria-selected="true" aria-controls="fVisit" id="tVisit">센터 견학 예약</button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="fMatch" id="tMatch">요양보호사 상담 신청</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="fMatch" id="tMatch">요양보호사 상담 신청 (방문요양)</button>
     </div>
 
     <form class="aform card rv" id="fVisit" role="tabpanel" aria-labelledby="tVisit" novalidate>
@@ -658,7 +687,7 @@
         <a class="btn btn-k btn-sm" data-i-href="kakao" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>카카오톡 상담</a>
         <a class="btn btn-l btn-sm" href="#apply">견학 예약 신청</a>
       </div>
-      <div class="hrs"><svg class="ico"><use href="#i-clock"/></svg><span>평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span><br>통화가 어려우시면 카카오톡으로 남겨 주세요.</span></div>
+      <div class="hrs"><svg class="ico"><use href="#i-clock"/></svg><span>평일 <span data-i="hours">[운영시간]</span> · 토요일 <span data-i="sat">[운영 여부]</span><br>통화가 어려우시면 문자(<span data-i="sms"></span>)나 카카오톡으로 남겨 주세요.</span></div>
       <div class="links">
         <a data-i-href="blog" href="#" target="_blank" rel="noopener">센터 소식 (블로그)</a>
         <a data-i-href="naverMap" href="#" target="_blank" rel="noopener">네이버 지도</a>
@@ -722,7 +751,7 @@ const INFO = {
   blog:     "https://blog.naver.com/sng04211",
   naverMap: "https://map.naver.com/p/search/%ED%99%94%EC%88%9C%20%ED%8F%89%EC%95%88%EB%85%B8%EC%9D%B8%EC%A3%BC%EA%B0%84%EB%B3%B4%ED%98%B8%EC%84%BC%ED%84%B0", // 플레이스 등록 후 공유 링크로 교체
   kakao:    "http://pf.kakao.com/_xdTyxdX",                         // 카카오톡 채널 주소 (비우면 버튼 숨김)
-  sms:      "",                  // 견학·상담 신청을 문자로 받을 휴대폰 번호 (비우면 문자 버튼 숨김)
+  sms:      "010-9221-0510",     // 견학·상담 신청을 문자로 받을 휴대폰 번호 (비우면 문자 버튼 숨김)
   naverBooking: "",              // 네이버 예약 주소 (넣으면 견학 예약에 '네이버 예약' 버튼이 생김)
   visitTimes: ["오전 10시", "오전 11시", "오후 2시", "오후 3시", "오후 4시"],  // 견학 가능 시간
   mealFee:  0,                   // 주간보호 하루 식사·간식비(원). 0 이면 계산기에 '별도'로 표시
@@ -782,6 +811,16 @@ const FEE = {
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
   $$('.rv').forEach(el=>io.observe(el));
 
+  // 지금 보는 구역을 메뉴에 표시 (모바일 빠른 메뉴는 해당 버튼이 보이게 옆으로 밀어 줌)
+  const navLinks=$$('.quick a,.menu a'), quick=$('.quick');
+  const secIO=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    navLinks.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));
+    const q=quick.querySelector(`a[href="#${e.target.id}"]`);
+    if(q && quick.offsetParent) quick.scrollTo({left:q.offsetLeft-18,behavior:still?'auto':'smooth'});
+  }),{rootMargin:'-45% 0px -50% 0px'});
+  [...new Set(navLinks.map(a=>a.getAttribute('href')))].forEach(h=>{ const s=document.querySelector(h); if(s) secIO.observe(s); });
+
   // 토스트
   const toast=$('#toast'); let tt;
   function say(t){ toast.textContent=t; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),4200); }
@@ -823,7 +862,18 @@ const FEE = {
     calc();
   }
   segBtns.forEach(b=>b.onclick=()=>setSvc(b.dataset.v));
-  ['#cGrade','#cRate','#cDayH','#cDayN','#cHomeM','#cHomeN'].forEach(s=>$(s).onchange=calc);
+  ['#cGrade','#cRate','#cDayH','#cHomeM'].forEach(s=>$(s).onchange=calc);
+  // 일주일 횟수 → 한 달 횟수 자동 채움. 한 달 횟수는 직접 고칠 수 있음
+  const perMonth=w=>Math.round(w*4.3);
+  [['#cDayN','#cDayM'],['#cHomeN','#cHomeMN']].forEach(([wk,mo])=>{
+    const m=$(mo); m.value=perMonth(+$(wk).value);
+    $(wk).onchange=()=>{ m.value=perMonth(+$(wk).value); calc(); };
+    const clamp=()=>{ let v=Math.round(+m.value)||1; v=Math.min(+m.max,Math.max(1,v)); m.value=v; };
+    m.oninput=()=>{ if(m.value!=='') calc(); };
+    m.onchange=()=>{ clamp(); calc(); };
+    m.parentElement.querySelectorAll('button[data-step]').forEach(b=>b.onclick=()=>{ m.value=(+m.value||0)+(+b.dataset.step); clamp(); calc(); });
+  });
+  const monthN=s=>Math.min(+$(s).max,Math.max(1,Math.round(+$(s).value)||1));
   function calc(){
     const g=+$('#cGrade').value, rate=+$('#cRate').value, msg=$('#cMsg');
     const useDay=svc!=='home', useHome=svc!=='day';
@@ -834,8 +884,8 @@ const FEE = {
       msg.className='msg show'; msg.textContent='인지지원등급은 방문요양을 이용할 수 없어요. 주간보호로 계산해 보세요.';
       return;
     }
-    const dayN=useDay? Math.round(+$('#cDayN').value*4.3):0;
-    const homeN=useHome? Math.round(+$('#cHomeN').value*4.3):0;
+    const dayN=useDay? monthN('#cDayM'):0;
+    const homeN=useHome? monthN('#cHomeMN'):0;
     const dayH=+$('#cDayH').value;
     const gross=(useDay? FEE.day[dayH][g]*dayN:0) + (useHome? FEE.home[$('#cHomeM').value]*homeN:0);
     let limit=FEE.limit[g];
