@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /README.txt
+
+Sitemap: https://pyeongan-care.kr/sitemap.xml
