@@ -229,6 +229,7 @@
   .pimg .ico{width:44px;height:44px;stroke-width:1.4}
   .pcard:nth-child(even) .pimg{color:var(--brown)}
   .pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pimg .ai{position:absolute;left:10px;bottom:10px;z-index:1;font-size:12px;line-height:1;padding:5px 8px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff}
   .pimg.empty{background:radial-gradient(circle at 50% 50%,var(--paper) 0 34px,transparent 35px),var(--soft)}
   .pbody{padding:20px 22px 24px}
   .pbody h3{font-size:20px;font-weight:800;color:var(--brown-d);margin-bottom:6px}
@@ -526,13 +527,13 @@
     <div class="head rv"><div class="eyebrow">프로그램</div><h2>몸과 마음을 <em>함께</em> 움직입니다</h2><p class="lead">"오늘도 재미있었다"는 말이 나오도록. 어르신 상태에 따라 개별로 조정합니다.</p></div>
     <div class="pgrid rv">
       <div class="pcard card"><div class="pimg" data-src="img/p2.jpg"><svg class="ico"><use href="#i-brain"/></svg></div><div class="pbody"><h3>인지활동</h3><p>회상 활동, 그림·색칠, 종이접기, 숫자·글자 놀이, 노래로 기억력과 집중력을 유지합니다.</p></div></div>
-      <div class="pcard card"><div class="pimg" data-src="img/p1.jpg"><svg class="ico"><use href="#i-run"/></svg></div><div class="pbody"><h3>신체활동</h3><p>의자 체조, 밴드 운동, 공놀이, 걷기. 낙상 예방과 근력 유지를 위해 매일 움직입니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p1.jpg" data-ai><svg class="ico"><use href="#i-run"/></svg></div><div class="pbody"><h3>신체활동</h3><p>의자 체조, 밴드 운동, 공놀이, 걷기. 낙상 예방과 근력 유지를 위해 매일 움직입니다.</p></div></div>
       <div class="pcard card"><div class="pimg" data-src="img/p3.jpg"><svg class="ico"><use href="#i-music"/></svg></div><div class="pbody"><h3>여가 · 정서</h3><p>미술·음악·원예, 나들이, 생신 잔치, 계절 행사로 즐거움과 소속감을 드립니다.</p></div></div>
       <div class="pcard card"><div class="pimg" data-src="img/p4.jpg"><svg class="ico"><use href="#i-bowl"/></svg></div><div class="pbody"><h3>식사 · 영양</h3><p data-i="meal">[식사 제공 방식]</p></div></div>
       <div class="pcard card"><div class="pimg" data-src="img/p5.jpg"><svg class="ico"><use href="#i-bus"/></svg></div><div class="pbody"><h3>송영 서비스</h3><p>차량 <span data-i="vans">[N]</span>대로 집 앞까지 안전하게 모십니다. 승하차 때 직원이 함께합니다.</p></div></div>
-      <div class="pcard card"><div class="pimg" data-src="img/p6.jpg"><svg class="ico"><use href="#i-steth"/></svg></div><div class="pbody"><h3>건강 관리</h3><p>매일 혈압·체온 확인, 복약 도움. 변화가 있으면 보호자께 바로 연락드립니다. <span data-i="health">[간호 인력]</span></p></div></div>
-      <div class="pcard card"><div class="pimg" data-src="img/p7.jpg"><svg class="ico"><use href="#i-bath"/></svg></div><div class="pbody"><h3>목욕 서비스</h3><p>혼자 씻기 어려우신 어르신을 직원이 안전하게 도와드립니다. 댁에서 목욕시켜 드리기 힘든 보호자의 부담을 덜어 드립니다.</p></div></div>
-      <div class="pcard card"><div class="pimg" data-src="img/p8.jpg"><svg class="ico"><use href="#i-hosp"/></svg></div><div class="pbody"><h3>병원 동행</h3><p>보호자 일정이 맞지 않으실 때 직원이 병원 진료에 함께 다녀옵니다. 진료 내용은 보호자께 전해 드립니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p6.jpg" data-ai><svg class="ico"><use href="#i-steth"/></svg></div><div class="pbody"><h3>건강 관리</h3><p>매일 혈압·체온 확인, 복약 도움. 변화가 있으면 보호자께 바로 연락드립니다. <span data-i="health">[간호 인력]</span></p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p7.jpg" data-ai><svg class="ico"><use href="#i-bath"/></svg></div><div class="pbody"><h3>목욕 서비스</h3><p>혼자 씻기 어려우신 어르신을 직원이 안전하게 도와드립니다. 댁에서 목욕시켜 드리기 힘든 보호자의 부담을 덜어 드립니다.</p></div></div>
+      <div class="pcard card"><div class="pimg" data-src="img/p8.jpg" data-ai><svg class="ico"><use href="#i-hosp"/></svg></div><div class="pbody"><h3>병원 동행</h3><p>보호자 일정이 맞지 않으실 때 직원이 병원 진료에 함께 다녀옵니다. 진료 내용은 보호자께 전해 드립니다.</p></div></div>
     </div>
   </div>
 </section>
@@ -832,7 +833,8 @@ const FEE = {
 
   // 사진: 파일이 있으면 표시, 없으면 아이콘(자리표시) 유지
   $$('.pimg[data-src]').forEach(box=>{
-    const img=new Image(); img.alt=''; img.onload=()=>box.appendChild(img); img.onerror=()=>box.classList.add('empty'); img.src=box.dataset.src;
+    const img=new Image(); img.alt=''; img.onerror=()=>box.classList.add('empty'); img.src=box.dataset.src;
+    img.onload=()=>{ box.appendChild(img); if('ai' in box.dataset) box.insertAdjacentHTML('beforeend','<span class="ai">AI 예시 이미지</span>'); };
   });
   $$('.about-photo[data-src]').forEach(box=>{
     const img=new Image(); img.alt=''; img.onload=()=>box.appendChild(img); img.onerror=()=>{ box.parentElement.classList.add('solo'); box.remove(); }; img.src=box.dataset.src;
