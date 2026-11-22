@@ -15,7 +15,7 @@
    hero1.jpg hero2.jpg hero3.jpg (첫 화면 슬라이드, 가로 1920px 권장)
    p1.jpg 신체활동 · p2.jpg 인지활동 · p3.jpg 여가·정서(나들이·생신) · p4.jpg 식사 · p5.jpg 송영 차량 · p6.jpg 건강 관리
    p7.jpg 목욕 서비스 · p8.jpg 병원 동행 (가로 1200px 이상)
-   - 지금 p1·p5·p6·p7·p8 은 AI(Gemini)로 만든 예시 사진이라 'AI 예시 이미지' 표시가 붙습니다(index.html 의 data-ai).
+   - 지금 p5·p6·p7·p8 은 AI(Gemini)로 만든 예시 사진이라 'AI 예시 이미지' 표시가 붙습니다(index.html 의 data-ai).
      실제 사진으로 바꾸면 같은 이름으로 덮어쓰고 그 칸의 data-ai 를 지우세요. AI 원본은 E:\PyeonganCenter\_AI사진 에 있습니다.
    - 어르신 얼굴은 반드시 모자이크한 사진만 넣습니다. 받은 원본은 E:\PyeonganCenter\_받은사진 에 날짜별로 둡니다.
    about.jpg (센터장 인사 옆 사진, 없으면 글만 보임), og.jpg (카톡 공유 썸네일 1200x630)
